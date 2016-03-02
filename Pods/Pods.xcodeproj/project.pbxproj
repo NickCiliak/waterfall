@@ -1,0 +1,1234 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0545D573124B2080EF03FB9B2AD96740 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D4239F658851B0ACF21DEF0BC4A6CB /* AVFoundation.framework */; };
+		0676BBA33A175E23CB06A27F0DCA2E9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E0852DFFE016FC8A9C5B5C151CAC3 /* Foundation.framework */; };
+		098C432441A5AFA21B5A211E1918D6A0 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 423BD3B26BF067E5E0F4DCE0BC4224CB /* Pods-dummy.m */; };
+		09A1AB0A88AD600236A405363F55C038 /* Pods-Waterfall-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F02DD6940AF5C52BAEC618D84DE494 /* Pods-Waterfall-dummy.m */; };
+		0A32AAF4D3ADB43D3C21ECC26067BC2D /* FastttCapturedImage+Process.h in Headers */ = {isa = PBXBuildFile; fileRef = 75583C442A0F30712AD13F61FA615C6D /* FastttCapturedImage+Process.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AF22BF30F7F07D529B8C6CB36ED7B33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE6E4A8644E43A25F1F99FFCE10E565 /* UIKit.framework */; };
+		0F20D603F60652156C41F727558230B7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A128C3063A47C124358165CE1AAD4708 /* CoreMotion.framework */; };
+		103E41DDE1D4963412394C49E36A0EC8 /* FastttZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A17D47C1B957F378E93D0566D61E9F6 /* FastttZoom.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		1087A41006EF803934515F248D9A3518 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5D2DA472355E3BE310CEF636D5D7D /* DesignableTextView.swift */; };
+		11D4FC1B8A89A73D5BF09E6393755BC8 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FA7AD49135143E6DDEF67D31ECB5B7 /* DesignableTextField.swift */; };
+		12DC482F887559F51ED5E8EA3C5F7203 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC4633D83E126DE69474AF643ADECD2 /* SpringAnimation.swift */; };
+		17AD160C7961BE1FF848691EC2FA3B7B /* FastttCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E65E454F6A271CDBFA4BC2B44BFA8FA /* FastttCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EACD7F6F1B69A8BA1C8208A003B2F7D /* FastttCapturedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D7C7D807D5900196C0E0FDF8DB8EBE8 /* FastttCapturedImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F3E30F0824300570B3FF0237BC25926 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F4F79E05694E19510CE765706ADCDD /* Spring.swift */; };
+		278A4D73E26823FB9F1A67112711531A /* Pods-Waterfall-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA5F62FF6290626D919E572BAB815389 /* Pods-Waterfall-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A2EAF9C5FDC55FA153A1A0A57462A76 /* FastttZoom.h in Headers */ = {isa = PBXBuildFile; fileRef = 53B078187559FE7228369870DCF706F1 /* FastttZoom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3438E6FE8EB4CE9CC834C6DB74CE7AC8 /* Spring-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 664EF5F9B4017462E9DB2AC68A8DB872 /* Spring-dummy.m */; };
+		35F2963AD5CF9D00E012F8A1D0700F0D /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F83178E87CD8BCD92819F28A4F46DE8E /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C409C0CA1224E320637984D5E38A429 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D090D98D78C33CF893F217166CF4E8 /* DesignableButton.swift */; };
+		3E048BF5BEF701B07FCF9A8D0E39C09F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E0852DFFE016FC8A9C5B5C151CAC3 /* Foundation.framework */; };
+		3F223A7FD673E41B4F33345720BD7726 /* UIViewController+FastttCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 12FDA1ED00B92260284F099759E11BB2 /* UIViewController+FastttCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		418F79F87EDAC8EE73DED4ADD2D726B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E0852DFFE016FC8A9C5B5C151CAC3 /* Foundation.framework */; };
+		480AE31C6A897DE47FD3903395248ED7 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A25BCEA18582F719A86C0C9E3C8399 /* DesignableImageView.swift */; };
+		4FA84E1A7280E8BB4C82BE8C497A6A91 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C1CDABE1DE397B4A20F917685F4CB /* TransitionManager.swift */; };
+		500FC0D65821F9C857E84578C5EA88AC /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A5D0D417901C23B4C9FB47B6EA4B7 /* SpringButton.swift */; };
+		561E77E4821F57A17CE569DBC381DC15 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35502BD33A1BF34EFC823ED8F1F618B /* SpringImageView.swift */; };
+		5991BA130C778CC0B9606725B84683F4 /* Spring-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 60EC221D75B6C72E20EF639AFC98F7E0 /* Spring-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A4A09B9F0203B0F60C225E0CCE9CC9C /* FastttCameraInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F09765880C4BAF15A8019D76883C3E4E /* FastttCameraInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5DE9254BC621971B6432E7A2DF0A5F98 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF83443B665A9BE6788D5DE72967F8E /* SpringLabel.swift */; };
+		5F869A51F21B46CEAB6C0BDBF23C15E1 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203AE09025FF97A33B84838BFED86B1 /* SpringTextView.swift */; };
+		5FA1CCB68F50149497F54D62A5907116 /* IFTTTDeviceOrientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BA829E80011AF4DDF3B00F964BB347D /* IFTTTDeviceOrientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66D89526A5BB955F91ED45C2227482CB /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8081F3696CFA9BEB53017FC56AF3C6BB /* KeyboardLayoutConstraint.swift */; };
+		6C4C3D9CC22733BF1C45A8D1F1E66ED2 /* AVCaptureDevice+FastttCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C99D5768B5BB9E9FC595D1127C71308 /* AVCaptureDevice+FastttCamera.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		6E3D001365FAE03CCADF5925A1423DC1 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672A55A7C07DA06828CCD537A69F0E15 /* TransitionZoom.swift */; };
+		7002BDA0415D5A3489A2DF025A06E8E7 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC58E3C1B1EF3F439223F8F5CA25AFA /* AsyncButton.swift */; };
+		72829E2DB471E53DA39148B0ADD7FD7C /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902767142BBB31F71E4184B55C2C2A0 /* AutoTextView.swift */; };
+		78F9F9189D659925526E518B4A3EE632 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E372D1990A61333F5529F6D6E3CF5A57 /* DesignableView.swift */; };
+		7BBAC9A14E28C1585A8EA9A7ABD7D521 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D29A09370A3604025A1CB11D7C4B05 /* LoadingView.swift */; };
+		81AF3003F6ACCC42F11F328379F7846C /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A731C8291024F73A191CD2191752153 /* SpringTextField.swift */; };
+		853732ED9657B356EAD8531ED257C99D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E0852DFFE016FC8A9C5B5C151CAC3 /* Foundation.framework */; };
+		8752D438C1E4425E6910AD39772FB09B /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 531D42E77AF30518E8572BE8D9156E90 /* LoadingView.xib */; };
+		8A22614B80F84F66692BBBBE8DABCE75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A139FD0E6A79DF40BBA97E172EB5D5 /* Images.xcassets */; };
+		8AE84DBC856E9CFBF0D426BE1658D76D /* FastttCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C33B1C521D370B8C01632FEA104798D1 /* FastttCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C9DA27C8617FC122EAF809B7F57BB83 /* Pods-WaterfallTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A33436B5550C4FB7DFC5459DA44A9D89 /* Pods-WaterfallTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9056BA913A7355A9D69D85A002A41419 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605DF704956E45AAA3E0855EAFF3EE80 /* Misc.swift */; };
+		950F277EBD0255CDC366D251F01AEE04 /* Pods-WaterfallTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E03B6DB0B8EBE72BC82A0A73669B81 /* Pods-WaterfallTests-dummy.m */; };
+		968C8023D37B3DC009B9B3053112A5B1 /* AVCaptureDevice+FastttCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = E51DC526A5A9169AC012D3A76C7C874F /* AVCaptureDevice+FastttCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99383207DB264A0E2BF43A25C4FFE04A /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2D5D63948945C17A31F8848F772A0E /* UnwindSegue.swift */; };
+		9A39501B24921C73A301BAF029FA17AC /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E47D37D658A30B6B5E8DDF0424CB90 /* DesignableTabBarController.swift */; };
+		AC728FF466EE46A0F3CF06690A5ABB0E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82EAC5ABFD38DDD022E182EB94011FB /* SoundPlayer.swift */; };
+		AD9601DB540DC6CECBE69AD8C96E79DA /* FastttCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C792F62A4AA523B7ABD56BEEB6B1129 /* FastttCamera-dummy.m */; };
+		B2C76DA2BF336B37BADDD5CB588E39AC /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC1432D134809AE39F37D65B887F16 /* BlurView.swift */; };
+		B9899E3624A6016ADCFAC51F7DB791C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39E0852DFFE016FC8A9C5B5C151CAC3 /* Foundation.framework */; };
+		BBB2F862F83FED335CDF0136109B505A /* UIImage+FastttCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = CABD8621CAC3D418CDC80F1C506230F6 /* UIImage+FastttCamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC17FD9D730F1204D6EA48C9DB78CE47 /* FastttFocus.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A52FCBF4263CBC9B21C2948AF46D9CD /* FastttFocus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFFC297ACD898E039392192B375DF5D5 /* FastttCameraTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = E6B411625BB7A05AEEB32FCC65C879F4 /* FastttCameraTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C355B98D61ECCC166AF5D65485809B80 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75196412130811DF1B63E0C8E16B77D8 /* DesignableLabel.swift */; };
+		C37E475AD488665EA573AB8E1287EE22 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D05252F9D397CCB6797148F946356C8 /* ImageLoader.swift */; };
+		C725722A992E769A30E4C6E42B6C91B5 /* FastttCapturedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0E346356052BC5FFA0DC3CF7D80F6 /* FastttCapturedImage.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		CD992D10C331391B03445B27B2CDE19E /* UIImage+FastttCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6573652F2580DD7972DF554315DB0EF5 /* UIImage+FastttCamera.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		CF671F049A09EC0082B166BA94212371 /* FastttFocus.m in Sources */ = {isa = PBXBuildFile; fileRef = A489F8832B4AD7EAC13C6410A2885024 /* FastttFocus.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		DA4B2F695DF4A9351B59290A45130EFC /* FastttCapturedImage+Process.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F2B200C007A240F8C5DBE033A18A8 /* FastttCapturedImage+Process.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		E5C5EA0B07DA95FABC936F9369EFCBF0 /* IFTTTDeviceOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0955ACEA04194D0301BD758DFC7287 /* IFTTTDeviceOrientation.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		EE56F381402F2F05B39AFDE52117D58A /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9942781BCD47BC068C8B13E622C840C /* AsyncImageView.swift */; };
+		F90C8E27CD4F441D315A2A53379B4B46 /* FastttCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = FB977AFD8481B38C584E0D53CEB6424E /* FastttCamera.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		FC0449CBB253DC98DEA65382415CF0B6 /* UIViewController+FastttCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = F7010BF5E7FFBB9ED6CA35909B12C39A /* UIViewController+FastttCamera.m */; settings = {COMPILER_FLAGS = "-fmodules"; }; };
+		FDF0085B4EF20AD78A260ADED7A19DD9 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF90F3DAC029D9EC09041360FFF6D427 /* SpringView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C054BBFE61D4318EF16CF03CC1327C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDE08E699F8584FC766349E66C74182F;
+			remoteInfo = FastttCamera;
+		};
+		502CC7E49B6CD401B2EFB06AD2A171BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965BCB140D031C8F45CFF3B7EAF05748;
+			remoteInfo = Spring;
+		};
+		612252750D100DD9DC522C49E46ECB29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDE08E699F8584FC766349E66C74182F;
+			remoteInfo = FastttCamera;
+		};
+		BBBA648F728F2B11F9C68E6721C2D59C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965BCB140D031C8F45CFF3B7EAF05748;
+			remoteInfo = Spring;
+		};
+		E1178C5D85251815C9FB3EA92AF4B6E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965BCB140D031C8F45CFF3B7EAF05748;
+			remoteInfo = Spring;
+		};
+		EEE7AC8B22CAB8E09A110280D2FE3359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDE08E699F8584FC766349E66C74182F;
+			remoteInfo = FastttCamera;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		038D9758E511A2050D60966FFCFE0D80 /* Pods-WaterfallTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WaterfallTests.release.xcconfig"; sourceTree = "<group>"; };
+		06FE132D56F1EF6EAB09179C79635948 /* Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B0E346356052BC5FFA0DC3CF7D80F6 /* FastttCapturedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FastttCapturedImage.m; path = FastttCamera/FastttCapturedImage.m; sourceTree = "<group>"; };
+		0902767142BBB31F71E4184B55C2C2A0 /* AutoTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTextView.swift; path = Spring/AutoTextView.swift; sourceTree = "<group>"; };
+		0BC4633D83E126DE69474AF643ADECD2 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringAnimation.swift; path = Spring/SpringAnimation.swift; sourceTree = "<group>"; };
+		12C0FA42BEC169846EE33EF65A9E2128 /* Pods-WaterfallTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WaterfallTests-frameworks.sh"; sourceTree = "<group>"; };
+		12FDA1ED00B92260284F099759E11BB2 /* UIViewController+FastttCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FastttCamera.h"; path = "FastttCamera/UIViewController+FastttCamera.h"; sourceTree = "<group>"; };
+		17FDB2FDEB88B257C912C1082950312E /* Pods-Waterfall-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Waterfall-acknowledgements.plist"; sourceTree = "<group>"; };
+		1AD5D2DA472355E3BE310CEF636D5D7D /* DesignableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextView.swift; path = Spring/DesignableTextView.swift; sourceTree = "<group>"; };
+		1F679A33D3F80623BBC7C72D5E5C5AD0 /* Spring.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.xcconfig; sourceTree = "<group>"; };
+		25E47D37D658A30B6B5E8DDF0424CB90 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTabBarController.swift; path = Spring/DesignableTabBarController.swift; sourceTree = "<group>"; };
+		29822D72DDC5BE5446F70D70BB0D9E6B /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		2CF83443B665A9BE6788D5DE72967F8E /* SpringLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringLabel.swift; path = Spring/SpringLabel.swift; sourceTree = "<group>"; };
+		2D05252F9D397CCB6797148F946356C8 /* ImageLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = Spring/ImageLoader.swift; sourceTree = "<group>"; };
+		2DA9B0360F6531BB4451A1CE604482C6 /* Pods-WaterfallTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WaterfallTests-resources.sh"; sourceTree = "<group>"; };
+		3CC58E3C1B1EF3F439223F8F5CA25AFA /* AsyncButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncButton.swift; path = Spring/AsyncButton.swift; sourceTree = "<group>"; };
+		3F8997044B7F719A914303F75C84B1F4 /* Pods-Waterfall.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Waterfall.modulemap"; sourceTree = "<group>"; };
+		3FE6E4A8644E43A25F1F99FFCE10E565 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		40880E0C8A9372B9310A6C5813595417 /* Pods-WaterfallTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-WaterfallTests.modulemap"; sourceTree = "<group>"; };
+		4203AE09025FF97A33B84838BFED86B1 /* SpringTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextView.swift; path = Spring/SpringTextView.swift; sourceTree = "<group>"; };
+		423BD3B26BF067E5E0F4DCE0BC4224CB /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		4348560FBFEFE31E17C2D69F1EC110A3 /* Pods-Waterfall-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Waterfall-frameworks.sh"; sourceTree = "<group>"; };
+		45D090D98D78C33CF893F217166CF4E8 /* DesignableButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = Spring/DesignableButton.swift; sourceTree = "<group>"; };
+		52C052336192F4B799815C928A656367 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		531D42E77AF30518E8572BE8D9156E90 /* LoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LoadingView.xib; path = Spring/LoadingView.xib; sourceTree = "<group>"; };
+		53B078187559FE7228369870DCF706F1 /* FastttZoom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastttZoom.h; path = FastttCamera/FastttZoom.h; sourceTree = "<group>"; };
+		57E03B6DB0B8EBE72BC82A0A73669B81 /* Pods-WaterfallTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WaterfallTests-dummy.m"; sourceTree = "<group>"; };
+		5A731C8291024F73A191CD2191752153 /* SpringTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextField.swift; path = Spring/SpringTextField.swift; sourceTree = "<group>"; };
+		5D955FC97A31CB1F3F0B21806BDB8D46 /* FastttCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FastttCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		605DF704956E45AAA3E0855EAFF3EE80 /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Spring/Misc.swift; sourceTree = "<group>"; };
+		60EC221D75B6C72E20EF639AFC98F7E0 /* Spring-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-umbrella.h"; sourceTree = "<group>"; };
+		6573652F2580DD7972DF554315DB0EF5 /* UIImage+FastttCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FastttCamera.m"; path = "FastttCamera/UIImage+FastttCamera.m"; sourceTree = "<group>"; };
+		65D29A09370A3604025A1CB11D7C4B05 /* LoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Spring/LoadingView.swift; sourceTree = "<group>"; };
+		664EF5F9B4017462E9DB2AC68A8DB872 /* Spring-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spring-dummy.m"; sourceTree = "<group>"; };
+		672A55A7C07DA06828CCD537A69F0E15 /* TransitionZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
+		6A52FCBF4263CBC9B21C2948AF46D9CD /* FastttFocus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastttFocus.h; path = FastttCamera/FastttFocus.h; sourceTree = "<group>"; };
+		6C792F62A4AA523B7ABD56BEEB6B1129 /* FastttCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FastttCamera-dummy.m"; sourceTree = "<group>"; };
+		6E65E454F6A271CDBFA4BC2B44BFA8FA /* FastttCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastttCamera.h; path = FastttCamera/FastttCamera.h; sourceTree = "<group>"; };
+		74662685C699DA3E11E3D697C5F31084 /* Pods_WaterfallTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterfallTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		748C1CDABE1DE397B4A20F917685F4CB /* TransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
+		7504BD0371D9BFC6A38B606153BBF6B5 /* FastttCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FastttCamera.xcconfig; sourceTree = "<group>"; };
+		75196412130811DF1B63E0C8E16B77D8 /* DesignableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableLabel.swift; path = Spring/DesignableLabel.swift; sourceTree = "<group>"; };
+		75583C442A0F30712AD13F61FA615C6D /* FastttCapturedImage+Process.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FastttCapturedImage+Process.h"; path = "FastttCamera/FastttCapturedImage+Process.h"; sourceTree = "<group>"; };
+		767881981C9890F7C052F7F050573128 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		7A17D47C1B957F378E93D0566D61E9F6 /* FastttZoom.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FastttZoom.m; path = FastttCamera/FastttZoom.m; sourceTree = "<group>"; };
+		7B1A2B9C40E2B3A02BC2BEFAAD7B7B7A /* Pods-Waterfall-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Waterfall-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7BA829E80011AF4DDF3B00F964BB347D /* IFTTTDeviceOrientation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IFTTTDeviceOrientation.h; path = FastttCamera/IFTTTDeviceOrientation.h; sourceTree = "<group>"; };
+		7C99D5768B5BB9E9FC595D1127C71308 /* AVCaptureDevice+FastttCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AVCaptureDevice+FastttCamera.m"; path = "FastttCamera/AVCaptureDevice+FastttCamera.m"; sourceTree = "<group>"; };
+		7D7C7D807D5900196C0E0FDF8DB8EBE8 /* FastttCapturedImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastttCapturedImage.h; path = FastttCamera/FastttCapturedImage.h; sourceTree = "<group>"; };
+		8081F3696CFA9BEB53017FC56AF3C6BB /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = Spring/KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		839B315317898BAD39C61816EE22BAFE /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8CD7035462FA37CC6EE19B414473A9BE /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		8F2D36ACD40BEEF8DF5FD71637C1B99B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F2D5D63948945C17A31F8848F772A0E /* UnwindSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
+		919E9D6BF32E358BC8DED3E4A17C6CCE /* FastttCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FastttCamera.modulemap; sourceTree = "<group>"; };
+		92F02DD6940AF5C52BAEC618D84DE494 /* Pods-Waterfall-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Waterfall-dummy.m"; sourceTree = "<group>"; };
+		96AC1432D134809AE39F37D65B887F16 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
+		993722EBE7735D92B26F829810227A57 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C7A5D0D417901C23B4C9FB47B6EA4B7 /* SpringButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringButton.swift; path = Spring/SpringButton.swift; sourceTree = "<group>"; };
+		A128C3063A47C124358165CE1AAD4708 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		A14894062D4CF8ECD80C3515EA598D96 /* Pods_Waterfall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waterfall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A33436B5550C4FB7DFC5459DA44A9D89 /* Pods-WaterfallTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WaterfallTests-umbrella.h"; sourceTree = "<group>"; };
+		A489F8832B4AD7EAC13C6410A2885024 /* FastttFocus.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FastttFocus.m; path = FastttCamera/FastttFocus.m; sourceTree = "<group>"; };
+		A9A139FD0E6A79DF40BBA97E172EB5D5 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpringApp/Images.xcassets; sourceTree = "<group>"; };
+		AA5F62FF6290626D919E572BAB815389 /* Pods-Waterfall-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Waterfall-umbrella.h"; sourceTree = "<group>"; };
+		AB2F2B200C007A240F8C5DBE033A18A8 /* FastttCapturedImage+Process.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FastttCapturedImage+Process.m"; path = "FastttCamera/FastttCapturedImage+Process.m"; sourceTree = "<group>"; };
+		AC9C21A47BCC07E30CC91BBBE3E7AE48 /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spring.modulemap; sourceTree = "<group>"; };
+		AFD67D35B1E3EAAFB3F04EEB8F3796CD /* Pods-Waterfall-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Waterfall-resources.sh"; sourceTree = "<group>"; };
+		B1B72A55FB9E40D98A1027A8504B7C1D /* Pods-WaterfallTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WaterfallTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B39E0852DFFE016FC8A9C5B5C151CAC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B3D4F36A2EDAF6E50FBF5AE04A78B6D7 /* Pods-WaterfallTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WaterfallTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B5731566156A0F56FCB83391C7C6B6FD /* Pods-Waterfall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Waterfall.debug.xcconfig"; sourceTree = "<group>"; };
+		B82EAC5ABFD38DDD022E182EB94011FB /* SoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundPlayer.swift; path = Spring/SoundPlayer.swift; sourceTree = "<group>"; };
+		B9942781BCD47BC068C8B13E622C840C /* AsyncImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BB0955ACEA04194D0301BD758DFC7287 /* IFTTTDeviceOrientation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IFTTTDeviceOrientation.m; path = FastttCamera/IFTTTDeviceOrientation.m; sourceTree = "<group>"; };
+		C1A25BCEA18582F719A86C0C9E3C8399 /* DesignableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableImageView.swift; path = Spring/DesignableImageView.swift; sourceTree = "<group>"; };
+		C33B1C521D370B8C01632FEA104798D1 /* FastttCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastttCamera-umbrella.h"; sourceTree = "<group>"; };
+		C35502BD33A1BF34EFC823ED8F1F618B /* SpringImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringImageView.swift; path = Spring/SpringImageView.swift; sourceTree = "<group>"; };
+		CABD8621CAC3D418CDC80F1C506230F6 /* UIImage+FastttCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+FastttCamera.h"; path = "FastttCamera/UIImage+FastttCamera.h"; sourceTree = "<group>"; };
+		CF90F3DAC029D9EC09041360FFF6D427 /* SpringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = Spring/SpringView.swift; sourceTree = "<group>"; };
+		D0EE02C269D56F2E4628356A43700BE5 /* Pods-Waterfall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Waterfall.release.xcconfig"; sourceTree = "<group>"; };
+		D343C0EC3778581DD13AC76AB4082D7C /* FastttCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FastttCamera-prefix.pch"; sourceTree = "<group>"; };
+		D6FA7AD49135143E6DDEF67D31ECB5B7 /* DesignableTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = Spring/DesignableTextField.swift; sourceTree = "<group>"; };
+		DA1633F219B3779C0686E53A23721F71 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		DCCE45A3781C4C9534CC47D205FC6B9D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		E2BEC0648E5213688463DFE60B37EDCA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E372D1990A61333F5529F6D6E3CF5A57 /* DesignableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Spring/DesignableView.swift; sourceTree = "<group>"; };
+		E51DC526A5A9169AC012D3A76C7C874F /* AVCaptureDevice+FastttCamera.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AVCaptureDevice+FastttCamera.h"; path = "FastttCamera/AVCaptureDevice+FastttCamera.h"; sourceTree = "<group>"; };
+		E6B411625BB7A05AEEB32FCC65C879F4 /* FastttCameraTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastttCameraTypes.h; path = FastttCamera/FastttCameraTypes.h; sourceTree = "<group>"; };
+		E6D4239F658851B0ACF21DEF0BC4A6CB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		E6FB7DD1FDB0EA4BAB6FD1832043A251 /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
+		E6FF59D0732716714AB179DE35667EFC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		E9608C33BE694C3924E13FF3C8102DA4 /* Pods-WaterfallTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WaterfallTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ED8DA4BEDF3632C993E1B1DD037363B7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09765880C4BAF15A8019D76883C3E4E /* FastttCameraInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FastttCameraInterface.h; path = FastttCamera/FastttCameraInterface.h; sourceTree = "<group>"; };
+		F1F4F79E05694E19510CE765706ADCDD /* Spring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spring.swift; path = Spring/Spring.swift; sourceTree = "<group>"; };
+		F7010BF5E7FFBB9ED6CA35909B12C39A /* UIViewController+FastttCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+FastttCamera.m"; path = "FastttCamera/UIViewController+FastttCamera.m"; sourceTree = "<group>"; };
+		F83178E87CD8BCD92819F28A4F46DE8E /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		FB977AFD8481B38C584E0D53CEB6424E /* FastttCamera.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FastttCamera.m; path = FastttCamera/FastttCamera.m; sourceTree = "<group>"; };
+		FD5F9FB07594223BA56029FE101C1056 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43FA8F29F7DB03FA5E73F0E1F0B4B0D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				853732ED9657B356EAD8531ED257C99D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DB4B4A5559CBB28ADC22CAE7387AADD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9899E3624A6016ADCFAC51F7DB791C6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67B0F280EDE132FEAE6B92F687FA7D1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0545D573124B2080EF03FB9B2AD96740 /* AVFoundation.framework in Frameworks */,
+				0F20D603F60652156C41F727558230B7 /* CoreMotion.framework in Frameworks */,
+				418F79F87EDAC8EE73DED4ADD2D726B5 /* Foundation.framework in Frameworks */,
+				0AF22BF30F7F07D529B8C6CB36ED7B33 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A72F59E87F4ABA42432FB6FDD4CDFB4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E048BF5BEF701B07FCF9A8D0E39C09F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3354B10F7960A6D7F597283CD34BF94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0676BBA33A175E23CB06A27F0DCA2E9D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				909092D0E2AEE4974499122E83828FC9 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15EEBB8E3CA0B3B28EF6EFBC25EE2886 /* Pods-WaterfallTests */ = {
+			isa = PBXGroup;
+			children = (
+				52C052336192F4B799815C928A656367 /* Info.plist */,
+				40880E0C8A9372B9310A6C5813595417 /* Pods-WaterfallTests.modulemap */,
+				E9608C33BE694C3924E13FF3C8102DA4 /* Pods-WaterfallTests-acknowledgements.markdown */,
+				B3D4F36A2EDAF6E50FBF5AE04A78B6D7 /* Pods-WaterfallTests-acknowledgements.plist */,
+				57E03B6DB0B8EBE72BC82A0A73669B81 /* Pods-WaterfallTests-dummy.m */,
+				12C0FA42BEC169846EE33EF65A9E2128 /* Pods-WaterfallTests-frameworks.sh */,
+				2DA9B0360F6531BB4451A1CE604482C6 /* Pods-WaterfallTests-resources.sh */,
+				A33436B5550C4FB7DFC5459DA44A9D89 /* Pods-WaterfallTests-umbrella.h */,
+				B1B72A55FB9E40D98A1027A8504B7C1D /* Pods-WaterfallTests.debug.xcconfig */,
+				038D9758E511A2050D60966FFCFE0D80 /* Pods-WaterfallTests.release.xcconfig */,
+			);
+			name = "Pods-WaterfallTests";
+			path = "Target Support Files/Pods-WaterfallTests";
+			sourceTree = "<group>";
+		};
+		16449C090DAF928826405A1919EB13A7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD5F9FB07594223BA56029FE101C1056 /* Info.plist */,
+				AC9C21A47BCC07E30CC91BBBE3E7AE48 /* Spring.modulemap */,
+				1F679A33D3F80623BBC7C72D5E5C5AD0 /* Spring.xcconfig */,
+				664EF5F9B4017462E9DB2AC68A8DB872 /* Spring-dummy.m */,
+				E6FB7DD1FDB0EA4BAB6FD1832043A251 /* Spring-prefix.pch */,
+				60EC221D75B6C72E20EF639AFC98F7E0 /* Spring-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Spring";
+			sourceTree = "<group>";
+		};
+		22DF47AFBB22BA00E72712634731CCF9 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				E51DC526A5A9169AC012D3A76C7C874F /* AVCaptureDevice+FastttCamera.h */,
+				7C99D5768B5BB9E9FC595D1127C71308 /* AVCaptureDevice+FastttCamera.m */,
+				6E65E454F6A271CDBFA4BC2B44BFA8FA /* FastttCamera.h */,
+				FB977AFD8481B38C584E0D53CEB6424E /* FastttCamera.m */,
+				F09765880C4BAF15A8019D76883C3E4E /* FastttCameraInterface.h */,
+				E6B411625BB7A05AEEB32FCC65C879F4 /* FastttCameraTypes.h */,
+				7D7C7D807D5900196C0E0FDF8DB8EBE8 /* FastttCapturedImage.h */,
+				07B0E346356052BC5FFA0DC3CF7D80F6 /* FastttCapturedImage.m */,
+				75583C442A0F30712AD13F61FA615C6D /* FastttCapturedImage+Process.h */,
+				AB2F2B200C007A240F8C5DBE033A18A8 /* FastttCapturedImage+Process.m */,
+				6A52FCBF4263CBC9B21C2948AF46D9CD /* FastttFocus.h */,
+				A489F8832B4AD7EAC13C6410A2885024 /* FastttFocus.m */,
+				53B078187559FE7228369870DCF706F1 /* FastttZoom.h */,
+				7A17D47C1B957F378E93D0566D61E9F6 /* FastttZoom.m */,
+				7BA829E80011AF4DDF3B00F964BB347D /* IFTTTDeviceOrientation.h */,
+				BB0955ACEA04194D0301BD758DFC7287 /* IFTTTDeviceOrientation.m */,
+				CABD8621CAC3D418CDC80F1C506230F6 /* UIImage+FastttCamera.h */,
+				6573652F2580DD7972DF554315DB0EF5 /* UIImage+FastttCamera.m */,
+				12FDA1ED00B92260284F099759E11BB2 /* UIViewController+FastttCamera.h */,
+				F7010BF5E7FFBB9ED6CA35909B12C39A /* UIViewController+FastttCamera.m */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		280B7B630D4D856BBEA27BFDC381A375 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4A0BFAE0BD51AAEAA3D9619A7D51D3E /* FastttCamera */,
+				8700BC97D2D985FDF10C20042CD25CA6 /* Spring */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3605A329983D4C784944DFB8F51A5408 /* Pods-Waterfall */ = {
+			isa = PBXGroup;
+			children = (
+				E2BEC0648E5213688463DFE60B37EDCA /* Info.plist */,
+				3F8997044B7F719A914303F75C84B1F4 /* Pods-Waterfall.modulemap */,
+				7B1A2B9C40E2B3A02BC2BEFAAD7B7B7A /* Pods-Waterfall-acknowledgements.markdown */,
+				17FDB2FDEB88B257C912C1082950312E /* Pods-Waterfall-acknowledgements.plist */,
+				92F02DD6940AF5C52BAEC618D84DE494 /* Pods-Waterfall-dummy.m */,
+				4348560FBFEFE31E17C2D69F1EC110A3 /* Pods-Waterfall-frameworks.sh */,
+				AFD67D35B1E3EAAFB3F04EEB8F3796CD /* Pods-Waterfall-resources.sh */,
+				AA5F62FF6290626D919E572BAB815389 /* Pods-Waterfall-umbrella.h */,
+				B5731566156A0F56FCB83391C7C6B6FD /* Pods-Waterfall.debug.xcconfig */,
+				D0EE02C269D56F2E4628356A43700BE5 /* Pods-Waterfall.release.xcconfig */,
+			);
+			name = "Pods-Waterfall";
+			path = "Target Support Files/Pods-Waterfall";
+			sourceTree = "<group>";
+		};
+		746A5C87E4B4311FF76ACF45E94D3953 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				919E9D6BF32E358BC8DED3E4A17C6CCE /* FastttCamera.modulemap */,
+				7504BD0371D9BFC6A38B606153BBF6B5 /* FastttCamera.xcconfig */,
+				6C792F62A4AA523B7ABD56BEEB6B1129 /* FastttCamera-dummy.m */,
+				D343C0EC3778581DD13AC76AB4082D7C /* FastttCamera-prefix.pch */,
+				C33B1C521D370B8C01632FEA104798D1 /* FastttCamera-umbrella.h */,
+				993722EBE7735D92B26F829810227A57 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FastttCamera";
+			sourceTree = "<group>";
+		};
+		7987FB227E95319C158062F46EC39E25 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9A139FD0E6A79DF40BBA97E172EB5D5 /* Images.xcassets */,
+				531D42E77AF30518E8572BE8D9156E90 /* LoadingView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
+				280B7B630D4D856BBEA27BFDC381A375 /* Pods */,
+				AA2AE7630D2B5FA9EC24B8A637CAD442 /* Products */,
+				FFE704B4BC8F5B032554A4F0DFA0E5F6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8700BC97D2D985FDF10C20042CD25CA6 /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				3CC58E3C1B1EF3F439223F8F5CA25AFA /* AsyncButton.swift */,
+				B9942781BCD47BC068C8B13E622C840C /* AsyncImageView.swift */,
+				0902767142BBB31F71E4184B55C2C2A0 /* AutoTextView.swift */,
+				96AC1432D134809AE39F37D65B887F16 /* BlurView.swift */,
+				45D090D98D78C33CF893F217166CF4E8 /* DesignableButton.swift */,
+				C1A25BCEA18582F719A86C0C9E3C8399 /* DesignableImageView.swift */,
+				75196412130811DF1B63E0C8E16B77D8 /* DesignableLabel.swift */,
+				25E47D37D658A30B6B5E8DDF0424CB90 /* DesignableTabBarController.swift */,
+				D6FA7AD49135143E6DDEF67D31ECB5B7 /* DesignableTextField.swift */,
+				1AD5D2DA472355E3BE310CEF636D5D7D /* DesignableTextView.swift */,
+				E372D1990A61333F5529F6D6E3CF5A57 /* DesignableView.swift */,
+				2D05252F9D397CCB6797148F946356C8 /* ImageLoader.swift */,
+				8081F3696CFA9BEB53017FC56AF3C6BB /* KeyboardLayoutConstraint.swift */,
+				65D29A09370A3604025A1CB11D7C4B05 /* LoadingView.swift */,
+				605DF704956E45AAA3E0855EAFF3EE80 /* Misc.swift */,
+				B82EAC5ABFD38DDD022E182EB94011FB /* SoundPlayer.swift */,
+				F1F4F79E05694E19510CE765706ADCDD /* Spring.swift */,
+				0BC4633D83E126DE69474AF643ADECD2 /* SpringAnimation.swift */,
+				9C7A5D0D417901C23B4C9FB47B6EA4B7 /* SpringButton.swift */,
+				C35502BD33A1BF34EFC823ED8F1F618B /* SpringImageView.swift */,
+				2CF83443B665A9BE6788D5DE72967F8E /* SpringLabel.swift */,
+				5A731C8291024F73A191CD2191752153 /* SpringTextField.swift */,
+				4203AE09025FF97A33B84838BFED86B1 /* SpringTextView.swift */,
+				CF90F3DAC029D9EC09041360FFF6D427 /* SpringView.swift */,
+				748C1CDABE1DE397B4A20F917685F4CB /* TransitionManager.swift */,
+				672A55A7C07DA06828CCD537A69F0E15 /* TransitionZoom.swift */,
+				8F2D5D63948945C17A31F8848F772A0E /* UnwindSegue.swift */,
+				7987FB227E95319C158062F46EC39E25 /* Resources */,
+				16449C090DAF928826405A1919EB13A7 /* Support Files */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		909092D0E2AEE4974499122E83828FC9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				E6D4239F658851B0ACF21DEF0BC4A6CB /* AVFoundation.framework */,
+				A128C3063A47C124358165CE1AAD4708 /* CoreMotion.framework */,
+				B39E0852DFFE016FC8A9C5B5C151CAC3 /* Foundation.framework */,
+				3FE6E4A8644E43A25F1F99FFCE10E565 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AA2AE7630D2B5FA9EC24B8A637CAD442 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D955FC97A31CB1F3F0B21806BDB8D46 /* FastttCamera.framework */,
+				ED8DA4BEDF3632C993E1B1DD037363B7 /* Pods.framework */,
+				A14894062D4CF8ECD80C3515EA598D96 /* Pods_Waterfall.framework */,
+				74662685C699DA3E11E3D697C5F31084 /* Pods_WaterfallTests.framework */,
+				06FE132D56F1EF6EAB09179C79635948 /* Spring.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4A0BFAE0BD51AAEAA3D9619A7D51D3E /* FastttCamera */ = {
+			isa = PBXGroup;
+			children = (
+				22DF47AFBB22BA00E72712634731CCF9 /* Default */,
+				746A5C87E4B4311FF76ACF45E94D3953 /* Support Files */,
+			);
+			path = FastttCamera;
+			sourceTree = "<group>";
+		};
+		D0210F7DC1DE0EA3E37229F4EA311646 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F2D36ACD40BEEF8DF5FD71637C1B99B /* Info.plist */,
+				E6FF59D0732716714AB179DE35667EFC /* Pods.modulemap */,
+				839B315317898BAD39C61816EE22BAFE /* Pods-acknowledgements.markdown */,
+				767881981C9890F7C052F7F050573128 /* Pods-acknowledgements.plist */,
+				423BD3B26BF067E5E0F4DCE0BC4224CB /* Pods-dummy.m */,
+				8CD7035462FA37CC6EE19B414473A9BE /* Pods-frameworks.sh */,
+				29822D72DDC5BE5446F70D70BB0D9E6B /* Pods-resources.sh */,
+				F83178E87CD8BCD92819F28A4F46DE8E /* Pods-umbrella.h */,
+				DCCE45A3781C4C9534CC47D205FC6B9D /* Pods.debug.xcconfig */,
+				DA1633F219B3779C0686E53A23721F71 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		FFE704B4BC8F5B032554A4F0DFA0E5F6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0210F7DC1DE0EA3E37229F4EA311646 /* Pods */,
+				3605A329983D4C784944DFB8F51A5408 /* Pods-Waterfall */,
+				15EEBB8E3CA0B3B28EF6EFBC25EE2886 /* Pods-WaterfallTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		370EEDBA1F0B34AB73E3914E0F0E10DC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35F2963AD5CF9D00E012F8A1D0700F0D /* Pods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BF43E45432C6547CBFAD2C057626125 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C9DA27C8617FC122EAF809B7F57BB83 /* Pods-WaterfallTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBF1E9DDDA83B46342D411D0E3F64A15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				278A4D73E26823FB9F1A67112711531A /* Pods-Waterfall-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECD87D25B3F970218139E9B26DEFEC47 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5991BA130C778CC0B9606725B84683F4 /* Spring-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF11B29586B9E231C907151313513EF0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968C8023D37B3DC009B9B3053112A5B1 /* AVCaptureDevice+FastttCamera.h in Headers */,
+				8AE84DBC856E9CFBF0D426BE1658D76D /* FastttCamera-umbrella.h in Headers */,
+				17AD160C7961BE1FF848691EC2FA3B7B /* FastttCamera.h in Headers */,
+				5A4A09B9F0203B0F60C225E0CCE9CC9C /* FastttCameraInterface.h in Headers */,
+				BFFC297ACD898E039392192B375DF5D5 /* FastttCameraTypes.h in Headers */,
+				0A32AAF4D3ADB43D3C21ECC26067BC2D /* FastttCapturedImage+Process.h in Headers */,
+				1EACD7F6F1B69A8BA1C8208A003B2F7D /* FastttCapturedImage.h in Headers */,
+				BC17FD9D730F1204D6EA48C9DB78CE47 /* FastttFocus.h in Headers */,
+				2A2EAF9C5FDC55FA153A1A0A57462A76 /* FastttZoom.h in Headers */,
+				5FA1CCB68F50149497F54D62A5907116 /* IFTTTDeviceOrientation.h in Headers */,
+				BBB2F862F83FED335CDF0136109B505A /* UIImage+FastttCamera.h in Headers */,
+				3F223A7FD673E41B4F33345720BD7726 /* UIViewController+FastttCamera.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B82F121901628DA9579B998260CEEF7 /* Pods-WaterfallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 500D167FE5871F5AE59BD9DFD9B08816 /* Build configuration list for PBXNativeTarget "Pods-WaterfallTests" */;
+			buildPhases = (
+				B7EFDCF417CFC045AD18692143C2F489 /* Sources */,
+				43FA8F29F7DB03FA5E73F0E1F0B4B0D5 /* Frameworks */,
+				4BF43E45432C6547CBFAD2C057626125 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40A004977847782700AA5C5D4394021A /* PBXTargetDependency */,
+				F1A2C1C8520DE73FF90B277A24C26DF4 /* PBXTargetDependency */,
+			);
+			name = "Pods-WaterfallTests";
+			productName = "Pods-WaterfallTests";
+			productReference = 74662685C699DA3E11E3D697C5F31084 /* Pods_WaterfallTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		339C48F96C2C6035B1E7E0F945C6399D /* Pods-Waterfall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69A2E425C85A5AB4AFD29952018A020E /* Build configuration list for PBXNativeTarget "Pods-Waterfall" */;
+			buildPhases = (
+				366D484453C1E6D2F272DFE1C6CBD9EA /* Sources */,
+				5DB4B4A5559CBB28ADC22CAE7387AADD /* Frameworks */,
+				DBF1E9DDDA83B46342D411D0E3F64A15 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C48EB46EAAB3127EF62D085CE722B96C /* PBXTargetDependency */,
+				44A929E76C6078BE0E2ECE8427CF0D58 /* PBXTargetDependency */,
+			);
+			name = "Pods-Waterfall";
+			productName = "Pods-Waterfall";
+			productReference = A14894062D4CF8ECD80C3515EA598D96 /* Pods_Waterfall.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		965BCB140D031C8F45CFF3B7EAF05748 /* Spring */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EC6326AC5B95367A2A534281E49823A /* Build configuration list for PBXNativeTarget "Spring" */;
+			buildPhases = (
+				FA7B76046B904828D39217FEF122E8B5 /* Sources */,
+				A72F59E87F4ABA42432FB6FDD4CDFB4B /* Frameworks */,
+				5AA11CEB4423EE3D1936AB070FB4BB8C /* Resources */,
+				ECD87D25B3F970218139E9B26DEFEC47 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spring;
+			productName = Spring;
+			productReference = 06FE132D56F1EF6EAB09179C79635948 /* Spring.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A72D1BCE95C65B6924805BBEADBF5551 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20B2B15EBB8764DE5BCD766ED8010DD8 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				2B63444555049C050523B3E72C5EFD47 /* Sources */,
+				C3354B10F7960A6D7F597283CD34BF94 /* Frameworks */,
+				370EEDBA1F0B34AB73E3914E0F0E10DC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B28D17D80906BE29E68C5DFAF83479B /* PBXTargetDependency */,
+				BA123B32DB4A2853FD5792CAFB665440 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = ED8DA4BEDF3632C993E1B1DD037363B7 /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BDE08E699F8584FC766349E66C74182F /* FastttCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A15B3D7BCAD2FCF508D4827155AB3C6 /* Build configuration list for PBXNativeTarget "FastttCamera" */;
+			buildPhases = (
+				19FEE4A582816DB0F696799AA68A01F6 /* Sources */,
+				67B0F280EDE132FEAE6B92F687FA7D1C /* Frameworks */,
+				FF11B29586B9E231C907151313513EF0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastttCamera;
+			productName = FastttCamera;
+			productReference = 5D955FC97A31CB1F3F0B21806BDB8D46 /* FastttCamera.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AA2AE7630D2B5FA9EC24B8A637CAD442 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDE08E699F8584FC766349E66C74182F /* FastttCamera */,
+				A72D1BCE95C65B6924805BBEADBF5551 /* Pods */,
+				339C48F96C2C6035B1E7E0F945C6399D /* Pods-Waterfall */,
+				1B82F121901628DA9579B998260CEEF7 /* Pods-WaterfallTests */,
+				965BCB140D031C8F45CFF3B7EAF05748 /* Spring */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AA11CEB4423EE3D1936AB070FB4BB8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A22614B80F84F66692BBBBE8DABCE75 /* Images.xcassets in Resources */,
+				8752D438C1E4425E6910AD39772FB09B /* LoadingView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19FEE4A582816DB0F696799AA68A01F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C4C3D9CC22733BF1C45A8D1F1E66ED2 /* AVCaptureDevice+FastttCamera.m in Sources */,
+				AD9601DB540DC6CECBE69AD8C96E79DA /* FastttCamera-dummy.m in Sources */,
+				F90C8E27CD4F441D315A2A53379B4B46 /* FastttCamera.m in Sources */,
+				DA4B2F695DF4A9351B59290A45130EFC /* FastttCapturedImage+Process.m in Sources */,
+				C725722A992E769A30E4C6E42B6C91B5 /* FastttCapturedImage.m in Sources */,
+				CF671F049A09EC0082B166BA94212371 /* FastttFocus.m in Sources */,
+				103E41DDE1D4963412394C49E36A0EC8 /* FastttZoom.m in Sources */,
+				E5C5EA0B07DA95FABC936F9369EFCBF0 /* IFTTTDeviceOrientation.m in Sources */,
+				CD992D10C331391B03445B27B2CDE19E /* UIImage+FastttCamera.m in Sources */,
+				FC0449CBB253DC98DEA65382415CF0B6 /* UIViewController+FastttCamera.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B63444555049C050523B3E72C5EFD47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				098C432441A5AFA21B5A211E1918D6A0 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		366D484453C1E6D2F272DFE1C6CBD9EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A1AB0A88AD600236A405363F55C038 /* Pods-Waterfall-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7EFDCF417CFC045AD18692143C2F489 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				950F277EBD0255CDC366D251F01AEE04 /* Pods-WaterfallTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA7B76046B904828D39217FEF122E8B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7002BDA0415D5A3489A2DF025A06E8E7 /* AsyncButton.swift in Sources */,
+				EE56F381402F2F05B39AFDE52117D58A /* AsyncImageView.swift in Sources */,
+				72829E2DB471E53DA39148B0ADD7FD7C /* AutoTextView.swift in Sources */,
+				B2C76DA2BF336B37BADDD5CB588E39AC /* BlurView.swift in Sources */,
+				3C409C0CA1224E320637984D5E38A429 /* DesignableButton.swift in Sources */,
+				480AE31C6A897DE47FD3903395248ED7 /* DesignableImageView.swift in Sources */,
+				C355B98D61ECCC166AF5D65485809B80 /* DesignableLabel.swift in Sources */,
+				9A39501B24921C73A301BAF029FA17AC /* DesignableTabBarController.swift in Sources */,
+				11D4FC1B8A89A73D5BF09E6393755BC8 /* DesignableTextField.swift in Sources */,
+				1087A41006EF803934515F248D9A3518 /* DesignableTextView.swift in Sources */,
+				78F9F9189D659925526E518B4A3EE632 /* DesignableView.swift in Sources */,
+				C37E475AD488665EA573AB8E1287EE22 /* ImageLoader.swift in Sources */,
+				66D89526A5BB955F91ED45C2227482CB /* KeyboardLayoutConstraint.swift in Sources */,
+				7BBAC9A14E28C1585A8EA9A7ABD7D521 /* LoadingView.swift in Sources */,
+				9056BA913A7355A9D69D85A002A41419 /* Misc.swift in Sources */,
+				AC728FF466EE46A0F3CF06690A5ABB0E /* SoundPlayer.swift in Sources */,
+				3438E6FE8EB4CE9CC834C6DB74CE7AC8 /* Spring-dummy.m in Sources */,
+				1F3E30F0824300570B3FF0237BC25926 /* Spring.swift in Sources */,
+				12DC482F887559F51ED5E8EA3C5F7203 /* SpringAnimation.swift in Sources */,
+				500FC0D65821F9C857E84578C5EA88AC /* SpringButton.swift in Sources */,
+				561E77E4821F57A17CE569DBC381DC15 /* SpringImageView.swift in Sources */,
+				5DE9254BC621971B6432E7A2DF0A5F98 /* SpringLabel.swift in Sources */,
+				81AF3003F6ACCC42F11F328379F7846C /* SpringTextField.swift in Sources */,
+				5F869A51F21B46CEAB6C0BDBF23C15E1 /* SpringTextView.swift in Sources */,
+				FDF0085B4EF20AD78A260ADED7A19DD9 /* SpringView.swift in Sources */,
+				4FA84E1A7280E8BB4C82BE8C497A6A91 /* TransitionManager.swift in Sources */,
+				6E3D001365FAE03CCADF5925A1423DC1 /* TransitionZoom.swift in Sources */,
+				99383207DB264A0E2BF43A25C4FFE04A /* UnwindSegue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B28D17D80906BE29E68C5DFAF83479B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FastttCamera;
+			target = BDE08E699F8584FC766349E66C74182F /* FastttCamera */;
+			targetProxy = 612252750D100DD9DC522C49E46ECB29 /* PBXContainerItemProxy */;
+		};
+		40A004977847782700AA5C5D4394021A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FastttCamera;
+			target = BDE08E699F8584FC766349E66C74182F /* FastttCamera */;
+			targetProxy = EEE7AC8B22CAB8E09A110280D2FE3359 /* PBXContainerItemProxy */;
+		};
+		44A929E76C6078BE0E2ECE8427CF0D58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = 965BCB140D031C8F45CFF3B7EAF05748 /* Spring */;
+			targetProxy = E1178C5D85251815C9FB3EA92AF4B6E9 /* PBXContainerItemProxy */;
+		};
+		BA123B32DB4A2853FD5792CAFB665440 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = 965BCB140D031C8F45CFF3B7EAF05748 /* Spring */;
+			targetProxy = 502CC7E49B6CD401B2EFB06AD2A171BE /* PBXContainerItemProxy */;
+		};
+		C48EB46EAAB3127EF62D085CE722B96C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FastttCamera;
+			target = BDE08E699F8584FC766349E66C74182F /* FastttCamera */;
+			targetProxy = 1C054BBFE61D4318EF16CF03CC1327C9 /* PBXContainerItemProxy */;
+		};
+		F1A2C1C8520DE73FF90B277A24C26DF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = 965BCB140D031C8F45CFF3B7EAF05748 /* Spring */;
+			targetProxy = BBBA648F728F2B11F9C68E6721C2D59C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3188E3A51AA049E772ED9EF7720E6657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 038D9758E511A2050D60966FFCFE0D80 /* Pods-WaterfallTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WaterfallTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WaterfallTests/Pods-WaterfallTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WaterfallTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		79FE43682FC3CE97ADF794518C4B5961 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7504BD0371D9BFC6A38B606153BBF6B5 /* FastttCamera.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FastttCamera/FastttCamera-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FastttCamera/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FastttCamera/FastttCamera.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FastttCamera;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8D37348B926160751A044F0CBD0CB20F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1B72A55FB9E40D98A1027A8504B7C1D /* Pods-WaterfallTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WaterfallTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WaterfallTests/Pods-WaterfallTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_WaterfallTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A8E7854101FF0150B184CF1A3B5A4956 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5731566156A0F56FCB83391C7C6B6FD /* Pods-Waterfall.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Waterfall/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Waterfall/Pods-Waterfall.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Waterfall;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AADDBE0AE41A35B4BA5D3A7EC3F901E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0EE02C269D56F2E4628356A43700BE5 /* Pods-Waterfall.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Waterfall/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Waterfall/Pods-Waterfall.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Waterfall;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BD5EE11950E706407BF73136A3DA60E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F679A33D3F80623BBC7C72D5E5C5AD0 /* Spring.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BF957D3CD73D9FD202CCDB6356F8A2DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F679A33D3F80623BBC7C72D5E5C5AD0 /* Spring.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C7FE1392042C261137D229EFFAA4F18E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA1633F219B3779C0686E53A23721F71 /* Pods.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF680E922B471B075FD42AB5D4D1605D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7504BD0371D9BFC6A38B606153BBF6B5 /* FastttCamera.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FastttCamera/FastttCamera-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FastttCamera/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FastttCamera/FastttCamera.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FastttCamera;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E7A37D472425435358DE9D45E3BD9F1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCCE45A3781C4C9534CC47D205FC6B9D /* Pods.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A15B3D7BCAD2FCF508D4827155AB3C6 /* Build configuration list for PBXNativeTarget "FastttCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79FE43682FC3CE97ADF794518C4B5961 /* Debug */,
+				CF680E922B471B075FD42AB5D4D1605D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20B2B15EBB8764DE5BCD766ED8010DD8 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7A37D472425435358DE9D45E3BD9F1D /* Debug */,
+				C7FE1392042C261137D229EFFAA4F18E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EC6326AC5B95367A2A534281E49823A /* Build configuration list for PBXNativeTarget "Spring" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF957D3CD73D9FD202CCDB6356F8A2DB /* Debug */,
+				BD5EE11950E706407BF73136A3DA60E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		500D167FE5871F5AE59BD9DFD9B08816 /* Build configuration list for PBXNativeTarget "Pods-WaterfallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D37348B926160751A044F0CBD0CB20F /* Debug */,
+				3188E3A51AA049E772ED9EF7720E6657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69A2E425C85A5AB4AFD29952018A020E /* Build configuration list for PBXNativeTarget "Pods-Waterfall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8E7854101FF0150B184CF1A3B5A4956 /* Debug */,
+				AADDBE0AE41A35B4BA5D3A7EC3F901E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
