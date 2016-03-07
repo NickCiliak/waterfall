@@ -84,10 +84,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Waterfall/CameraManager.framework"
   install_framework "Pods-Waterfall/FastttCamera.framework"
+  install_framework "Pods-Waterfall/ImagePickerSheetController.framework"
+  install_framework "Pods-Waterfall/Masonry.framework"
   install_framework "Pods-Waterfall/Spring.framework"
+  install_framework "Pods-Waterfall/jot.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Waterfall/CameraManager.framework"
   install_framework "Pods-Waterfall/FastttCamera.framework"
+  install_framework "Pods-Waterfall/ImagePickerSheetController.framework"
+  install_framework "Pods-Waterfall/Masonry.framework"
   install_framework "Pods-Waterfall/Spring.framework"
+  install_framework "Pods-Waterfall/jot.framework"
 fi

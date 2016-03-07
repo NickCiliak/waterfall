@@ -84,10 +84,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/CameraManager.framework"
   install_framework "Pods/FastttCamera.framework"
+  install_framework "Pods/ImagePickerSheetController.framework"
+  install_framework "Pods/Masonry.framework"
   install_framework "Pods/Spring.framework"
+  install_framework "Pods/jot.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/CameraManager.framework"
   install_framework "Pods/FastttCamera.framework"
+  install_framework "Pods/ImagePickerSheetController.framework"
+  install_framework "Pods/Masonry.framework"
   install_framework "Pods/Spring.framework"
+  install_framework "Pods/jot.framework"
 fi

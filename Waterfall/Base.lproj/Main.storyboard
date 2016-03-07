@@ -85,10 +85,10 @@ making Waterfalls.</string>
             </objects>
             <point key="canvasLocation" x="429" y="272"/>
         </scene>
-        <!--View Controller-->
+        <!--CaptureVC-->
         <scene sceneID="wNW-Tq-Qfs">
             <objects>
-                <viewController id="7T8-HL-fG5" sceneMemberID="viewController">
+                <viewController id="7T8-HL-fG5" customClass="CaptureVC" customModule="Waterfall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pVe-LW-D5J"/>
                         <viewControllerLayoutGuide type="bottom" id="4Sp-jw-6ZE"/>
@@ -147,6 +147,12 @@ making Waterfalls.</string>
                             <constraint firstAttribute="centerX" secondItem="4Bt-OY-a9v" secondAttribute="centerX" id="xfU-zG-K41"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="gPW-SA-Jy1" id="rEf-x1-gpi"/>
+                        <outlet property="closeButton" destination="jnd-Vu-0XY" id="JkT-Hs-tLy"/>
+                        <outlet property="confirmButton" destination="EMA-1r-KQE" id="xKf-6N-fPZ"/>
+                        <outlet property="imageView" destination="8w1-wR-Ex4" id="sIe-9j-J3P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jl6-DR-wMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

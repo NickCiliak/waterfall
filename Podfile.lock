@@ -1,11 +1,19 @@
 PODS:
+  - CameraManager (2.2.1)
   - FastttCamera (0.3.4):
     - FastttCamera/Default (= 0.3.4)
   - FastttCamera/Default (0.3.4)
+  - ImagePickerSheetController (0.9.1)
+  - jot (0.1.5):
+    - Masonry (~> 0.6.1)
+  - Masonry (0.6.4)
   - Spring (1.0.3)
 
 DEPENDENCIES:
+  - CameraManager (~> 2.2)
   - FastttCamera
+  - ImagePickerSheetController (~> 0.9.1)
+  - jot
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
 
 EXTERNAL SOURCES:
@@ -19,7 +27,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  CameraManager: 4177f23c022067b7210bc38c33d503fb3eb7f5a4
   FastttCamera: 51f16712cbd5bdb08bc6231b957325c6be5e478d
+  ImagePickerSheetController: 3c58c9fee6dcf36485222358a021f6b734f997ba
+  jot: 0f5dc333defa6ad805d01adc3834b201c22510a7
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
 COCOAPODS: 0.39.0
