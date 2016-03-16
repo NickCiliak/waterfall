@@ -109,23 +109,26 @@ making Waterfalls.</string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bt-OY-a9v">
-                                <rect key="frame" x="117" y="463" width="87" height="87"/>
-                                <state key="normal" backgroundImage="camera_btn">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMA-1r-KQE">
                                 <rect key="frame" x="232" y="481" width="52" height="52"/>
                                 <state key="normal" backgroundImage="confirm_btn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnd-Vu-0XY">
-                                <rect key="frame" x="28" y="32" width="23" height="23"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnd-Vu-0XY">
+                                <rect key="frame" x="28" y="28" width="23" height="23"/>
                                 <state key="normal" backgroundImage="x_btn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bt-OY-a9v">
+                                <rect key="frame" x="117" y="463" width="87" height="87"/>
+                                <state key="normal" backgroundImage="camera_btn">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="capture:" destination="7T8-HL-fG5" eventType="touchUpInside" id="JOb-pT-a3q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,6 +152,7 @@ making Waterfalls.</string>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="gPW-SA-Jy1" id="rEf-x1-gpi"/>
+                        <outlet property="captureButton" destination="4Bt-OY-a9v" id="Iww-qd-4Te"/>
                         <outlet property="closeButton" destination="jnd-Vu-0XY" id="JkT-Hs-tLy"/>
                         <outlet property="confirmButton" destination="EMA-1r-KQE" id="xKf-6N-fPZ"/>
                         <outlet property="imageView" destination="8w1-wR-Ex4" id="sIe-9j-J3P"/>
