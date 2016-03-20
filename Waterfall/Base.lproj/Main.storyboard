@@ -103,6 +103,10 @@ making Waterfalls.</string>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="8w1-wR-Ex4">
                                 <rect key="frame" x="12" y="20" width="296" height="296"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dd-TW-BkO" customClass="DesignableView" customModule="Spring">
+                                <rect key="frame" x="12" y="20" width="296" height="296"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPW-SA-Jy1">
                                 <rect key="frame" x="37" y="481" width="52" height="52"/>
                                 <state key="normal" backgroundImage="cancel_btn">
@@ -133,15 +137,19 @@ making Waterfalls.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6dd-TW-BkO" firstAttribute="top" secondItem="8w1-wR-Ex4" secondAttribute="top" id="A37-dC-Dza"/>
                             <constraint firstItem="4Sp-jw-6ZE" firstAttribute="top" secondItem="4Bt-OY-a9v" secondAttribute="bottom" constant="18" id="CcM-dQ-uvk"/>
                             <constraint firstItem="8w1-wR-Ex4" firstAttribute="top" secondItem="pVe-LW-D5J" secondAttribute="bottom" id="N0V-kT-2AI"/>
+                            <constraint firstItem="6dd-TW-BkO" firstAttribute="leading" secondItem="8w1-wR-Ex4" secondAttribute="leading" id="NqP-nQ-ecn"/>
                             <constraint firstItem="iUt-jE-Bpq" firstAttribute="top" secondItem="FJM-0o-8i4" secondAttribute="top" id="Nxb-Q5-99v"/>
+                            <constraint firstItem="6dd-TW-BkO" firstAttribute="trailing" secondItem="8w1-wR-Ex4" secondAttribute="trailing" id="P8t-Gz-MRX"/>
                             <constraint firstItem="4Sp-jw-6ZE" firstAttribute="top" secondItem="gPW-SA-Jy1" secondAttribute="bottom" constant="35" id="RA8-ID-HxG"/>
                             <constraint firstItem="jnd-Vu-0XY" firstAttribute="top" secondItem="pVe-LW-D5J" secondAttribute="bottom" constant="12" id="WMP-wX-Gc3"/>
                             <constraint firstAttribute="trailing" secondItem="iUt-jE-Bpq" secondAttribute="trailing" id="Xtl-gi-Slx"/>
                             <constraint firstItem="4Bt-OY-a9v" firstAttribute="leading" secondItem="gPW-SA-Jy1" secondAttribute="trailing" constant="28" id="crl-c6-rZr"/>
                             <constraint firstAttribute="centerX" secondItem="8w1-wR-Ex4" secondAttribute="centerX" id="dTF-rl-7KU"/>
                             <constraint firstItem="jnd-Vu-0XY" firstAttribute="leading" secondItem="FJM-0o-8i4" secondAttribute="leadingMargin" constant="12" id="eMt-nC-Lt4"/>
+                            <constraint firstItem="6dd-TW-BkO" firstAttribute="bottom" secondItem="8w1-wR-Ex4" secondAttribute="bottom" id="jYa-x2-e1I"/>
                             <constraint firstItem="gPW-SA-Jy1" firstAttribute="centerY" secondItem="EMA-1r-KQE" secondAttribute="centerY" id="lbd-mg-C4b"/>
                             <constraint firstItem="iUt-jE-Bpq" firstAttribute="leading" secondItem="FJM-0o-8i4" secondAttribute="leading" id="n78-BR-Vmj"/>
                             <constraint firstItem="4Sp-jw-6ZE" firstAttribute="top" secondItem="iUt-jE-Bpq" secondAttribute="bottom" id="o6B-ly-wi5"/>
@@ -151,6 +159,7 @@ making Waterfalls.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraPreview" destination="6dd-TW-BkO" id="ct6-Jd-4oD"/>
                         <outlet property="cancelButton" destination="gPW-SA-Jy1" id="rEf-x1-gpi"/>
                         <outlet property="captureButton" destination="4Bt-OY-a9v" id="Iww-qd-4Te"/>
                         <outlet property="closeButton" destination="jnd-Vu-0XY" id="JkT-Hs-tLy"/>
@@ -240,7 +249,7 @@ making Waterfalls.</string>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ready to save?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFU-po-7Tx">
-                                <rect key="frame" x="54.5" y="336" width="211.5" height="47"/>
+                                <rect key="frame" x="55" y="336" width="212" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="wBE-rN-chY"/>
                                 </constraints>

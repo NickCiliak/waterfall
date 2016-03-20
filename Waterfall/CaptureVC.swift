@@ -9,166 +9,118 @@
 import UIKit
 import AVFoundation
 
-class CaptureVC: UIViewController {
+enum Status: Int {
+    case Preview, Still, Error
+}
+
+class CaptureVC: UIViewController, XMCCameraDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var cameraPreview: UIView!
+    
     
     //Image Placeholder
     var stillImage:UIImage?
     
-    let captureSession = AVCaptureSession()
+    var preview: AVCaptureVideoPreviewLayer?
     
-    var backFacingCamera:AVCaptureDevice?
-    var frontFacingCamera:AVCaptureDevice?
-    var currentDevice:AVCaptureDevice?
-    
-    var stillImageOutput:AVCaptureStillImageOutput?
-    var cameraPreviewLayer:AVCaptureVideoPreviewLayer?
-    
-    var toggleCameraGestureRecognizer = UISwipeGestureRecognizer()
-    var zoomInGestureRecognizer = UISwipeGestureRecognizer()
-    var zoomOutGestureRecognizer = UISwipeGestureRecognizer()
+    var camera: XMCCamera?
+    var status: Status = .Preview
 
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Preset the session for taking photo in full resolution
-        captureSession.sessionPreset = AVCaptureSessionPresetPhoto
-        
-        let devices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo) as! [AVCaptureDevice]
-        // Get the front and back-facing camera for taking photos
-        for device in devices {
-            if device.position == AVCaptureDevicePosition.Back {
-                backFacingCamera = device
-            } else if device.position == AVCaptureDevicePosition.Front {
-                frontFacingCamera = device
-            }
-        }
-        currentDevice = backFacingCamera
-        
-        do {
-            let captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice)
-            
-            // Configure the session with the output for capturing still images
-            stillImageOutput = AVCaptureStillImageOutput()
-            stillImageOutput?.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
-            
-            // Configure the session with the input and the output devices
-            captureSession.addInput(captureDeviceInput)
-            captureSession.addOutput(stillImageOutput)
-            
-        } catch {
-            print(error)
-            return
-        }
-        
-        // Provide a camera preview
-        cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(cameraPreviewLayer!)
-        cameraPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-        cameraPreviewLayer?.frame = view.layer.frame
-        
-        // Bring the camera button to front
-        view.bringSubviewToFront(captureButton)
-        captureSession.startRunning()
-        
-        // Toggle Camera recognizer
-        toggleCameraGestureRecognizer.direction = .Up
-        toggleCameraGestureRecognizer.addTarget(self, action: "toggleCamera")
-        view.addGestureRecognizer(toggleCameraGestureRecognizer)
-        
-        // Zoom In recognizer
-        zoomInGestureRecognizer.direction = .Right
-        zoomInGestureRecognizer.addTarget(self, action: "zoomIn")
-        view.addGestureRecognizer(zoomInGestureRecognizer)
-        
-        // Zoom Out recognizer
-        zoomOutGestureRecognizer.direction = .Left
-        zoomOutGestureRecognizer.addTarget(self, action: "zoomOut")
-        view.addGestureRecognizer(zoomOutGestureRecognizer)
-
-
+     self.initializeCamera()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.establishVideoPreviewArea()
+    }
+    
+    func initializeCamera() {
+        //self.cameraStatus.text = "Starting Camera"
+        self.camera = XMCCamera(sender: self)
+    }
+    
+    func establishVideoPreviewArea() {
+        self.preview = AVCaptureVideoPreviewLayer(session: self.camera?.session)
+        self.preview?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        self.preview?.frame = self.cameraPreview.bounds
+        self.preview?.cornerRadius = 8.0
+        self.cameraPreview.layer.addSublayer(self.preview!)
+    }
+
+    
     @IBAction func capture(sender: AnyObject) {
-        let videoConnection = stillImageOutput?.connectionWithMediaType(AVMediaTypeVideo)
-        stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: { (imageDataSampleBuffer, error) -> Void in
+        if self.status == .Preview {
+            //self.cameraStatus.text = "Capturing Photo"
+            UIView.animateWithDuration(0.225, animations: { () -> Void in
+                self.cameraPreview.alpha = 0.0;
+                //self.cameraStatus.alpha = 1.0
+            })
             
-            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-            self.stillImage = UIImage(data: imageData)
-            self.imageView.image = UIImage(data: imageData)
-            //self.performSegueWithIdentifier("showPhoto", sender: self)
-            print("Capture Pressed")
-            
-        })
+            self.camera?.captureStillImage({ (image) -> Void in
+                if image != nil {
+                    self.imageView.image = image;
+                    
+                    UIView.animateWithDuration(0.225, animations: { () -> Void in
+                        self.imageView.alpha = 1.0;
+                        //self.cameraStatus.alpha = 0.0;
+                    })
+                    self.status = .Still
+                } else {
+                    //self.cameraStatus.text = "Uh oh! Something went wrong. Try it again."
+                    self.status = .Error
+                }
+                
+                //self.cameraCapture.setTitle("Reset", forState: UIControlState.Normal)
+            })
+        } else if self.status == .Still || self.status == .Error {
+            UIView.animateWithDuration(0.225, animations: { () -> Void in
+                //self.cameraStill.alpha = 0.0;
+                //self.cameraStatus.alpha = 0.0;
+                self.cameraPreview.alpha = 1.0;
+                //self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
+                }, completion: { (done) -> Void in
+                    self.imageView.image = nil;
+                    self.status = .Preview
+            })
+        }
+
     }
 
    
     
-    
-    func toggleCamera() {
-        captureSession.beginConfiguration()
-        
-        // Change the device based on the current camera
-        let newDevice = (currentDevice?.position == AVCaptureDevicePosition.Back) ? frontFacingCamera : backFacingCamera
-        
-        // Remove all inputs from the session
-        for input in captureSession.inputs {
-            captureSession.removeInput(input as! AVCaptureDeviceInput)
-        }
-        
-        // Change to the new input
-        let cameraInput:AVCaptureDeviceInput
-        do {
-            cameraInput = try AVCaptureDeviceInput(device: newDevice)
-        } catch {
-            print(error)
-            return
-        }
-        
-        if captureSession.canAddInput(cameraInput) {
-            captureSession.addInput(cameraInput)
-        }
-        
-        currentDevice = newDevice
-        captureSession.commitConfiguration()
-    }
-    
-    func zoomIn() {
-        if let zoomFactor = currentDevice?.videoZoomFactor {
-            if zoomFactor < 5.0 {
-                let newZoomFactor = min(zoomFactor + 1.0, 5.0)
-                do {
-                    try currentDevice?.lockForConfiguration()
-                    currentDevice?.rampToVideoZoomFactor(newZoomFactor, withRate: 1.0)
-                    currentDevice?.unlockForConfiguration()
-                } catch {
-                    print(error)
-                }
-            }
-        }
-    }
-    
-    func zoomOut() {
-        if let zoomFactor = currentDevice?.videoZoomFactor {
-            if zoomFactor > 1.0 {
-                let newZoomFactor = max(zoomFactor - 1.0, 1.0)
-                do {
-                    try currentDevice?.lockForConfiguration()
-                    currentDevice?.rampToVideoZoomFactor(newZoomFactor, withRate: 1.0)
-                    currentDevice?.unlockForConfiguration()
-                } catch {
-                    print(error)
-                }
-            }
-        }
-    }
+  
 
+    
+    // MARK: Camera Delegate
+    
+    func cameraSessionConfigurationDidComplete() {
+        self.camera?.startCamera()
+    }
+    
+    func cameraSessionDidBegin() {
+        //self.cameraStatus.text = ""
+        UIView.animateWithDuration(0.225, animations: { () -> Void in
+            //self.cameraStatus.alpha = 0.0
+            self.cameraPreview.alpha = 1.0
+            //self.cameraCapture.alpha = 1.0
+            //self.cameraCaptureShadow.alpha = 0.4;
+        })
+    }
+    
+    func cameraSessionDidStop() {
+        //self.cameraStatus.text = "Camera Stopped"
+        UIView.animateWithDuration(0.225, animations: { () -> Void in
+            //self.cameraStatus.alpha = 1.0
+            self.cameraPreview.alpha = 0.0
+        })
+    }
 
    
 
