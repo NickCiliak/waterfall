@@ -54,6 +54,9 @@ class CaptureVC: UIViewController, XMCCameraDelegate {
         self.cameraPreview.layer.addSublayer(self.preview!)
     }
 
+    @IBAction func deleteImageClicked(sender: AnyObject) {
+        initializeCamera()
+    }
     
     @IBAction func capture(sender: AnyObject) {
         if self.status == .Preview {
