@@ -84,6 +84,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE05659F1CA3501000042E23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE0565A01CA3501B00042E23 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CE0565A01CA3501B00042E23 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F21FA96C1C7403D200B3C7C0 /* Karla-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		F2F8C91A1C6E3AA400B32887 = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +123,7 @@
 		F2F8C9251C6E3AA400B32887 /* Waterfall */ = {
 			isa = PBXGroup;
 			children = (
-				F21FA96C1C7403D200B3C7C0 /* Karla-Regular.ttf */,
+				CE05659F1CA3501000042E23 /* Resources */,
 				F2F8C9281C6E3AA400B32887 /* AppDelegate.swift */,
 				CEDED29F1C9F30570065DA20 /* XMCCamera.swift */,
 				F2F8C92A1C6E3AA400B32887 /* ViewController.swift */,
