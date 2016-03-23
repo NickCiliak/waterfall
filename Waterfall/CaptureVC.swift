@@ -108,17 +108,17 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate {
     }
     
 //    // event called when a the keyboard is going to show
-//    func keyboardWillShow (notification: NSNotification){
+   func keyboardWillShow (notification: NSNotification){
 //        // get the info of the notification and get the keyboard height to move up the inputs view
-//        var info = notification.userInfo!
-//        let keyboardFrame:CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+     var info = notification.userInfo!
+    let keyboardFrame:CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 //        
 //        // set the new constant of the constraint and animate it
 //        //mainTextFieldBottomConstraint.constant = keyboardFrame.height
-//        UIView.animateWithDuration(0.4) { () -> Void in
-//            self.view.layoutIfNeeded()
-//        }
-//    }
+ UIView.animateWithDuration(0.4) { () -> Void in
+  self.view.layoutIfNeeded()
+      }
+ }
 //    
 //    // touches began on the main view, deal with the focuses of the textfields
 //    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
