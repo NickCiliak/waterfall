@@ -232,11 +232,11 @@ class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("GifCell", forIndexPath: indexPath)
             
             // set the text for the label
-            (cell.contentView.viewWithTag(6) as! UILabel).text = gifArray[indexPath.row]["text"] as? String
+            //(cell.contentView.viewWithTag(6) as! UILabel).text = gifArray[indexPath.row]["text"] as? String
             // set the font for the label
-            (cell.contentView.viewWithTag(6) as! UILabel).font = UIFont(name: (gifArray[indexPath.row]["font"] as? String)!, size: (cell.viewWithTag(6) as! UILabel).font.pointSize)
+            //(cell.contentView.viewWithTag(6) as! UILabel).font = UIFont(name: (gifArray[indexPath.row]["font"] as? String)!, size: (cell.viewWithTag(6) as! UILabel).font.pointSize)
             // set the font color for the label
-            (cell.contentView.viewWithTag(6) as! UILabel).textColor = gifArray[indexPath.row]["fontColor"] as? UIColor
+            //(cell.contentView.viewWithTag(6) as! UILabel).textColor = gifArray[indexPath.row]["fontColor"] as? UIColor
             
             // if image is not nil
             if gifArray[indexPath.row]["image"] != nil {
