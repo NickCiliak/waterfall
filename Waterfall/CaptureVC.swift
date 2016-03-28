@@ -9,9 +9,9 @@
 import UIKit
 import AVFoundation
 
-enum Status: Int {
-    case Preview, Still, Error
-}
+//enum Status: Int {
+//    case Preview, Still, Error
+//}
 
 class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate {
     @IBOutlet weak var imageView: UIImageView!
