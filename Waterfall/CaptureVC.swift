@@ -88,6 +88,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     func initializeCamera() {
         //self.cameraStatus.text = "Starting Camera"
         self.camera = XMCCamera(sender: self)
+        //self.cameraPreview.hidden = false
     }
     
     func establishVideoPreviewArea() {
@@ -99,7 +100,10 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     }
 
     @IBAction func deleteImageClicked(sender: AnyObject) {
+        
+        //gifArray.removeAtIndex(currentFrame)
         initializeCamera()
+        collectionView.reloadData()
     }
     
     @IBAction func capture(sender: AnyObject) {
@@ -114,8 +118,8 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                 if image != nil {
                     self.gifArray[self.currentFrame]["image"] = image;
                     print("Image Saved")
-                    self.collectionView.reloadData()
-                    //self.imageView.image = image;
+                    self.nextFrameCard()
+                    
                     
                     UIView.animateWithDuration(0.225, animations: { () -> Void in
                         //self.imageView.alpha = 1.0;
@@ -136,7 +140,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                 self.cameraPreview.alpha = 1.0;
                 //self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
                 }, completion: { (done) -> Void in
-                    self.gifArray[self.currentFrame]["image"] = nil
+                    //self.gifArray[self.currentFrame]["image"] = nil
                     //self.imageView.image = nil;
                     self.status = .Preview
             })
@@ -145,6 +149,24 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         collectionView.reloadData()
         //mainTextField.becomeFirstResponder()
 
+    }
+    @IBAction func deleteGIF(sender: AnyObject) {
+        gifArray.removeAll()
+        self.cameraPreview.layer.addSublayer(self.preview!)
+        collectionView.reloadData()
+        initializeCamera()
+    }
+    
+    func nextFrameCard() {
+        //initializeCamera()
+        self.gifArray.append(["text": "", "font": "Bebas", "fontColor": UIColor.whiteColor(), "backgroundColor": UIColor(red: 93.0/255.0, green: 156.0/255.0, blue: 236.0/255.0, alpha: 1.0), "image": UIImage()])
+        //self.imageView.image = image;
+        self.collectionView.reloadData()
+        // scroll the index collection view to the selected frame
+        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: self.gifArray.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
+        
+        // set the new current frame
+        self.currentFrame = self.gifArray.count - 1
     }
     
 //    // event called when a the keyboard is going to show
