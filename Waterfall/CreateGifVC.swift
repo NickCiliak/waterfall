@@ -11,9 +11,9 @@ import ImageIO
 import MobileCoreServices
 import AVFoundation
 
-enum Status: Int {
-    case Preview, Still, Error
-}
+//enum Status: Int {
+//    case Preview, Still, Error
+//}
 
 class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -24,6 +24,7 @@ class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate
     @IBOutlet weak var frameCollectionView: UICollectionView!
     
 
+    var cell:UICollectionViewCell!
     
     // the selected index of the elements/properties/options collection view
     var collectionViewIndex = 2
@@ -148,10 +149,15 @@ class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate
             self.camera?.captureStillImage({ (image) -> Void in
                 if image != nil {
                     
-                    self.frameCell.imageView.image = image;
+                    self.gifArray[self.currentFrame]["image"] = image;
+                    //CHANGE THIS!!!!!!!!!
+                    //(self.cell.contentView.viewWithTag(7) as! UIImageView).image = image
+                    //self.cell.imageView.image = image;
+                    
+                    //self.frameCell.imageView?.image = image;
                     
                     UIView.animateWithDuration(0.225, animations: { () -> Void in
-                        self.frameCell.imageView.alpha = 1.0;
+                        //self.frameCell.imageView.alpha = 1.0;
                         //self.cameraStatus.alpha = 0.0;
                     })
                     self.status = .Still
@@ -169,7 +175,8 @@ class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate
                 self.cameraPreview.alpha = 1.0;
                 //self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
                 }, completion: { (done) -> Void in
-                    self.frameCell.imageView.image = nil;
+                    self.gifArray[self.currentFrame]["image"] = nil;
+                    //self.frameCell.imageView.image = nil;
                     self.status = .Preview
             })
         }
@@ -225,11 +232,14 @@ class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate
     internal func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         // declare a cell
+       
         let cell:UICollectionViewCell!
+       
 
         if collectionView == frameCollectionView {
             // load the gif cell template
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("GifCell", forIndexPath: indexPath)
+
             
             // set the text for the label
             //(cell.contentView.viewWithTag(6) as! UILabel).text = gifArray[indexPath.row]["text"] as? String
@@ -241,29 +251,30 @@ class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate
             // if image is not nil
             if gifArray[indexPath.row]["image"] != nil {
                 // set the background image
+                //cell.imageView.image = gifArray[indexPath.row]["image"] as? UIImage
                 (cell.contentView.viewWithTag(7) as! UIImageView).image = gifArray[indexPath.row]["image"] as? UIImage
             }
-            // check if we have no text
-            if gifArray[indexPath.row]["text"] as! String == "" {
-                // then if the info label is hidden, show it
-                if (cell.contentView.viewWithTag(10) as! UILabel).hidden {
-                    (cell.contentView.viewWithTag(10) as! UILabel).hidden = false
-                }
-            }
-                // if we have text
-            else {
-                // if the info label is not hidden, hide it
-                if !(cell.contentView.viewWithTag(10) as! UILabel).hidden {
-                    (cell.contentView.viewWithTag(10) as! UILabel).hidden = true
-                }
-            }
+//            // check if we have no text
+//            if gifArray[indexPath.row]["text"] as! String == "" {
+//                // then if the info label is hidden, show it
+//                if (cell.contentView.viewWithTag(10) as! UILabel).hidden {
+//                    (cell.contentView.viewWithTag(10) as! UILabel).hidden = false
+//                }
+//            }
+//                // if we have text
+//            else {
+//                // if the info label is not hidden, hide it
+//                if !(cell.contentView.viewWithTag(10) as! UILabel).hidden {
+//                    (cell.contentView.viewWithTag(10) as! UILabel).hidden = true
+//                }
+//            }
             
             // if we are in the process of creating a gif
             if creatingGif {
                 // add corner radius to each cell
                 cell.layer.cornerRadius = 24
                 // hide the info label
-                (cell.contentView.viewWithTag(10) as! UILabel).hidden = true
+                //(cell.contentView.viewWithTag(10) as! UILabel).hidden = true
             }
                 // if we are not
             else {
@@ -274,10 +285,11 @@ class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate
             // if this is the indexs collection view
         else if collectionView == indexCollectionView {
             // load the index cell template
+            
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndexCell", forIndexPath: indexPath)
             
             // set the text as the row + 1 (as it start from 1 and rows from 0)
-            (cell.contentView.viewWithTag(8) as! UILabel).text = String(indexPath.row + 1)
+            //(cell.contentView.viewWithTag(8) as! UILabel).text = String(indexPath.row + 1)
             
             // if this is the current frame
             if indexPath.row == currentFrame {
@@ -310,6 +322,7 @@ class CreateGifVC: UIViewController, XMCCameraDelegate, UICollectionViewDelegate
             // if not a correct index
         else {
             // load a default cell
+            
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
         }
         

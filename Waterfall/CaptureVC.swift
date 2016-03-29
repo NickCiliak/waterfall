@@ -8,18 +8,21 @@
 
 import UIKit
 import AVFoundation
+import ImageIO
+import MobileCoreServices
 
-//enum Status: Int {
-//    case Preview, Still, Error
-//}
+enum Status: Int {
+    case Preview, Still, Error
+}
 
-class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate {
+class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var cameraPreview: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var mainTextField: UITextField!
     
@@ -31,6 +34,35 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate {
     var camera: XMCCamera?
     var status: Status = .Preview
     
+    // the gif array content
+    var gifArray:[Dictionary<String,Any>] = [["text": "", "font": "Bebas", "fontColor": UIColor.blackColor(), "backgroundColor": UIColor(red: 93.0/255.0, green: 156.0/255.0, blue: 236.0/255.0, alpha: 1.0), "image": UIImage()]]
+    
+    // the current frame index
+    var currentFrame = 0
+    
+    // a boolean variable use to control if we are in the process of creating a gif
+    var creatingGif = false
+    
+    // the current index of the the process of creating a gif
+    var currentIndex = 0
+    
+    // the destination used on the process of creating a gif
+    var destination:CGImageDestinationRef?
+    
+    // properties of the frames used on the process of creating a gif
+    var frameProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFDelayTime as String: 0.5]]
+    
+    // the file url used on the process of creating a gif
+    var fileURL = NSURL()
+    
+    // the file url for the video used on the process of creating a gif
+    var videoURL = NSURL()
+    
+    // the file url for the gif used on the process of creating a gif
+    var gifURL = NSURL()
+    
+
+    
     // set the status bar to light
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -40,6 +72,9 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
      self.initializeCamera()
+        collectionView.delegate = self
+        collectionView.reloadData()
+    
         
         // add an observer to catch later when the keyboard will show
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
@@ -77,10 +112,13 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate {
             
             self.camera?.captureStillImage({ (image) -> Void in
                 if image != nil {
-                    self.imageView.image = image;
+                    self.gifArray[self.currentFrame]["image"] = image;
+                    print("Image Saved")
+                    self.collectionView.reloadData()
+                    //self.imageView.image = image;
                     
                     UIView.animateWithDuration(0.225, animations: { () -> Void in
-                        self.imageView.alpha = 1.0;
+                        //self.imageView.alpha = 1.0;
                         //self.cameraStatus.alpha = 0.0;
                     })
                     self.status = .Still
@@ -98,12 +136,14 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate {
                 self.cameraPreview.alpha = 1.0;
                 //self.cameraCapture.setTitle("Capture", forState: UIControlState.Normal)
                 }, completion: { (done) -> Void in
-                    self.imageView.image = nil;
+                    self.gifArray[self.currentFrame]["image"] = nil
+                    //self.imageView.image = nil;
                     self.status = .Preview
             })
         }
-        
-        mainTextField.becomeFirstResponder()
+        print(gifArray.count)
+        collectionView.reloadData()
+        //mainTextField.becomeFirstResponder()
 
     }
     
@@ -151,8 +191,24 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate {
 //        return true
 //    }
 
-
-
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return gifArray.count
+    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        //let cell:UICollectionViewCell!
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndexCell", forIndexPath: indexPath)
+        
+        // if image is not nil
+        if gifArray[indexPath.row]["image"] != nil {
+            // set the background image
+            (cell.contentView.viewWithTag(7) as! UIImageView).image = gifArray[indexPath.row]["image"] as? UIImage
+        }
+        
+        return cell
+    }
    
     
   
