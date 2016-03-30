@@ -163,7 +163,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         //self.imageView.image = image;
         self.collectionView.reloadData()
         // scroll the index collection view to the selected frame
-        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: self.gifArray.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
+        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: self.gifArray.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
         
         // set the new current frame
         self.currentFrame = self.gifArray.count - 1
