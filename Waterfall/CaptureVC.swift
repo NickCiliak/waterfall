@@ -294,8 +294,16 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         // set the creating gif variable to true to indicate we are starting the process
         creatingGif = true
         
+        if creatingGif == true {
+            print("Creating Gif is true")
+        }
+        
         // set the current index to 0 as we are starting
         currentIndex = 0
+        
+        if currentIndex == 0 {
+            print("Current Index set to 0")
+        }
         
         // create the file properties (we make the gif to loop)
         let fileProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: 0]]
@@ -315,6 +323,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         // if we are on the first frame, start the creation
         if currentFrame == currentIndex {
             recursiveGifCreator()
+            print("recursiveGif function called")
         }
             // if not scroll to the beginning
         else {
@@ -327,6 +336,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     // recursively create all the frames for the gif
     func recursiveGifCreator() {
         if currentIndex < gifArray.count {
+            print("current index is less that the count of gifArray")
             // call the create image function in order to create an snapshot of the current frame
             let image:UIImage = createImage(currentIndex)
             
@@ -338,6 +348,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             
             // if this was the last one
             if currentIndex == gifArray.count {
+                 print("current index is equal that the count of gifArray")
                 // finalize the process
                 if (CGImageDestinationFinalize(destination!)) {
                     // if success, send the image to the share controller
@@ -368,6 +379,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                             NSOperationQueue.mainQueue().addOperationWithBlock {
                                 // perform the segue
                                 self.performSegueWithIdentifier("ShareSegue", sender: self)
+                                print("Segue being performed-Cross fingers")
                             }
                         }
                     };
@@ -397,6 +409,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             else {
                 // scroll to the next frame
                 collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
+                print("It must not be the last frame...here's your issue")
             }
         }
     }
