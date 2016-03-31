@@ -417,7 +417,6 @@ making Waterfalls.</string>
                         <outlet property="cameraPreview" destination="hbl-Ef-VBj" id="4GI-vl-kgf"/>
                         <outlet property="frameCollectionView" destination="xB0-BL-eMY" id="Pki-xc-yhz"/>
                         <outlet property="indexCollectionView" destination="j8U-2z-Nvd" id="NN5-Dd-5SY"/>
-                        <segue destination="1yc-8o-6PR" kind="modal" identifier="ShareSegue" id="e4C-PZ-vGA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lop-UJ-Mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -436,8 +435,8 @@ making Waterfalls.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="background_image" translatesAutoresizingMaskIntoConstraints="NO" id="J9z-gm-xsR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="background_image" translatesAutoresizingMaskIntoConstraints="NO" id="J9z-gm-xsR">
+                                <rect key="frame" x="0.0" y="-99" width="320" height="667"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="bGc-O9-hxM">
                                 <rect key="frame" x="105" y="171" width="111" height="113"/>
@@ -569,7 +568,4 @@ making Waterfalls.</string>
         <image name="plus_icon" width="22" height="22"/>
         <image name="x_btn" width="23" height="23"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="FhV-bZ-5Eb"/>
-    </inferredMetricsTieBreakers>
 </document>

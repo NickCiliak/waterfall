@@ -263,7 +263,10 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         })
     }
     
+ 
+
     
+//All the GIF creation stuff
     
     // event called when the create gif button is tapped
     @IBAction func createImage() {
@@ -316,6 +319,8 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             // if not scroll to the beginning
         else {
             collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
+            //??
+            recursiveGifCreator()
         }
     }
     
