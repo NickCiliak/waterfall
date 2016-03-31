@@ -37,6 +37,9 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     // the gif array content
     var gifArray:[Dictionary<String,Any>] = [["text": "", "font": "Bebas", "fontColor": UIColor.blackColor(), "backgroundColor": UIColor(red: 93.0/255.0, green: 156.0/255.0, blue: 236.0/255.0, alpha: 1.0), "image": UIImage()]]
     
+    // an alert view (used to show the user a wait for message while creating the gif)
+    var alert: UIAlertView?
+    
     // the current frame index
     var currentFrame = 0
     
@@ -259,6 +262,195 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             self.cameraPreview.alpha = 0.0
         })
     }
+    
+    
+    
+    // event called when the create gif button is tapped
+    @IBAction func createImage() {
+        // call to create the image
+        createGIF()
+    }
+    // create GIF function (prepares all the settings)
+    func createGIF() {
+        // create an alert
+        let alert = UIAlertView(title: "Creating the GIF", message: "Please wait...", delegate: nil, cancelButtonTitle: nil);
+        
+        // add a loading indicator
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(50, 10, 37, 37)) as UIActivityIndicatorView
+        loadingIndicator.center = self.view.center;
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        loadingIndicator.startAnimating();
+        
+        alert.setValue(loadingIndicator, forKey: "accessoryView")
+        loadingIndicator.startAnimating()
+        
+        // show the alert view
+        alert.show();
+        
+        // set the creating gif variable to true to indicate we are starting the process
+        creatingGif = true
+        
+        // set the current index to 0 as we are starting
+        currentIndex = 0
+        
+        // create the file properties (we make the gif to loop)
+        let fileProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: 0]]
+        
+        // create a file url for the gif
+        fileURL = NSURL(fileURLWithPath: getDocumentsDirectory() as String, isDirectory: true).URLByAppendingPathComponent("animated\(Int(arc4random_uniform(UInt32(10000000)))).gif")
+        
+        // create a destination needed for the process
+        destination = CGImageDestinationCreateWithURL(fileURL as CFURLRef, kUTTypeGIF, gifArray.count, nil)!
+        // set its properties
+        CGImageDestinationSetProperties(destination!, fileProperties as CFDictionaryRef)
+        
+        // reload the data so we have corner radius and no info labels
+        collectionView.reloadData()
+        collectionView.layoutIfNeeded()
+        
+        // if we are on the first frame, start the creation
+        if currentFrame == currentIndex {
+            recursiveGifCreator()
+        }
+            // if not scroll to the beginning
+        else {
+            collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
+        }
+    }
+    
+    // recursively create all the frames for the gif
+    func recursiveGifCreator() {
+        if currentIndex < gifArray.count {
+            // call the create image function in order to create an snapshot of the current frame
+            let image:UIImage = createImage(currentIndex)
+            
+            // add the image to the gif
+            CGImageDestinationAddImage(destination!, image.CGImage!, frameProperties as CFDictionaryRef);
+            
+            // increase the current index
+            currentIndex = currentIndex + 1
+            
+            // if this was the last one
+            if currentIndex == gifArray.count {
+                // finalize the process
+                if (CGImageDestinationFinalize(destination!)) {
+                    // if success, send the image to the share controller
+                    let documentURL = NSURL(string: "\(fileURL)")
+                    
+                    // set the process to false
+                    creatingGif = false
+                    
+                    // reload the data to see the correct data again
+                    collectionView.reloadData()
+                    
+                    
+                    // completion handler called when the video is finished
+                    let completionHandler:kGIF2MP4ConversionCompleted = { (path:ImplicitlyUnwrappedOptional<String>, error:ImplicitlyUnwrappedOptional<NSError>) in
+                        // if error, print it and stop it here
+                        if  error != nil {
+                            print(error)
+                        }
+                            // else, share it
+                        else {
+                            // create the URL
+                            let documentURL = NSURL(string: "\(path)")
+                            
+                            // store on the video variable
+                            self.videoURL = documentURL!
+                            
+                            // get back to main thread
+                            NSOperationQueue.mainQueue().addOperationWithBlock {
+                                // perform the segue
+                                self.performSegueWithIdentifier("ShareSegue", sender: self)
+                            }
+                        }
+                    };
+                    
+                    // create an URL for the video
+                    let vfileURL = NSURL(fileURLWithPath: getDocumentsDirectory() as String, isDirectory: true).URLByAppendingPathComponent("animated\(Int(arc4random_uniform(UInt32(10000000)))).mp4")
+                    // create an URL for the thumbnail
+                    let tfileURL = NSURL(fileURLWithPath: getDocumentsDirectory() as String, isDirectory: true).URLByAppendingPathComponent("animated\(Int(arc4random_uniform(UInt32(10000000)))).jpg")
+                    
+                    // store the gif url to share it later
+                    gifURL = documentURL!
+                    
+                    // create a new GIFDownloader class
+                    let gifD = GIFDownloader()
+                    
+                    // process the gif into a video
+                    gifD.processGIFData(NSData(contentsOfURL: documentURL!),
+                        toFilePath: vfileURL,
+                        thumbFilePath: tfileURL.absoluteString,
+                        completed: completionHandler)
+                    
+                    // dismiss the loading alert
+                    self.alert?.dismissWithClickedButtonIndex(-1, animated: true)
+                }
+            }
+                // if not the last, then continue
+            else {
+                // scroll to the next frame
+                collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
+            }
+        }
+    }
+    
+    // function to create a snapshot from the current frame
+    func createImage(index:Int) -> UIImage {
+        // get the current frame
+        let auxView = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
+        
+        // get the bounds of the view we want to create a image of
+        let screenshotBounds = CGSizeMake(auxView!.bounds.width, auxView!.bounds.height)
+        
+        // threshold max size
+        let maxSize = Double(1280.0);
+        
+        // check the max dimension
+        let maxDim = Double(max(auxView!.bounds.width, auxView!.bounds.height));
+        
+        // get the scale
+        let scale = CGFloat(Double(maxSize / maxDim));
+        
+        // begin to create the image
+        UIGraphicsBeginImageContextWithOptions(screenshotBounds, false, scale);
+        
+        // render in the view we want
+        auxView!.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        
+        // create and render the image
+        let screenCapture = UIGraphicsGetImageFromCurrentImageContext();
+        
+        // finalize the creation
+        UIGraphicsEndImageContext();
+        
+        // return the snapshot
+        return screenCapture
+    }
+    
+    // aux function used to get the correct path to store an image
+    func getDocumentsDirectory() -> NSString {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShareSegue" {
+            // Get the new view controller using segue.destinationViewController.
+            // Pass the selected object to the new view controller.
+            let viewController = segue.destinationViewController as! ShareViewController
+            
+            // set the gif and the video
+            viewController.gif = self.gifURL
+            viewController.video = self.videoURL
+        }
+    }
+
+
 
 }
 
