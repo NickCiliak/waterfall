@@ -294,16 +294,19 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         // set the creating gif variable to true to indicate we are starting the process
         creatingGif = true
         
-        if creatingGif == true {
-            print("Creating Gif is true")
-        }
+//        if creatingGif == true {
+//            print("Creating Gif is true")
+//        }
         
         // set the current index to 0 as we are starting
         currentIndex = 0
         
-        if currentIndex == 0 {
-            print("Current Index set to 0")
-        }
+//        if currentIndex == 0 {
+//            print("Current Index set to 0")
+//        }
+        
+        //??
+        //currentFrame = 0
         
         // create the file properties (we make the gif to loop)
         let fileProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: 0]]
@@ -327,9 +330,9 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         }
             // if not scroll to the beginning
         else {
-            collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
+            collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.Top, animated:true)
             //??
-            recursiveGifCreator()
+            //recursiveGifCreator()
         }
     }
     
@@ -408,7 +411,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                 // if not the last, then continue
             else {
                 // scroll to the next frame
-                collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
+                collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.Top, animated:true)
                 print("It must not be the last frame...here's your issue")
             }
         }
