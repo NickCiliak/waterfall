@@ -15,7 +15,7 @@ enum Status: Int {
     case Preview, Still, Error
 }
 
-class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -122,6 +122,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                     self.gifArray[self.currentFrame]["image"] = image;
                     print("Image Saved")
                     self.nextFrameCard()
+                    
                     
                     
                     UIView.animateWithDuration(0.225, animations: { () -> Void in
@@ -234,7 +235,38 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         
         return cell
     }
+    
    
+    // delegate method called when any collection view ended the scrolling animation
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        // call the another event as sometimes is not called
+        scrollViewDidEndDecelerating(scrollView)
+    }
+    
+    // delegate method called when any collection view ended the scrolling deceleration
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        // if the scroll view received is the frames collection view
+        if scrollView == collectionView {
+            // get the new current frame
+            currentFrame = Int(collectionView.contentOffset.x / collectionView.frame.size.width)
+            
+            // reload data on the index collection view
+            //indexCollectionView.reloadData()
+            
+            // set the new main textfield text
+            //mainTextField.text = gifArray[currentFrame]["text"] as? String
+            
+            // scroll the index collection view to the selected frame
+            //indexCollectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentFrame, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.CenteredHorizontally, animated:true)
+            
+            // if we are in the process of creating a gif
+            if creatingGif {
+                // call the gif creator function as this means it already did the last frame (if it existed)
+                recursiveGifCreator()
+            }
+        }
+    }
+
     
   
 
@@ -272,6 +304,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     @IBAction func createImage() {
         // call to create the image
         createGIF()
+       
     }
     // create GIF function (prepares all the settings)
     func createGIF() {
@@ -289,14 +322,14 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         loadingIndicator.startAnimating()
         
         // show the alert view
-        alert.show();
+        //alert.show();
         
         // set the creating gif variable to true to indicate we are starting the process
         creatingGif = true
         
-//        if creatingGif == true {
-//            print("Creating Gif is true")
-//        }
+        if creatingGif == true {
+            print("Creating Gif is true")
+        }
         
         // set the current index to 0 as we are starting
         currentIndex = 0
@@ -311,8 +344,10 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         // create the file properties (we make the gif to loop)
         let fileProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: 0]]
         
+        
         // create a file url for the gif
         fileURL = NSURL(fileURLWithPath: getDocumentsDirectory() as String, isDirectory: true).URLByAppendingPathComponent("animated\(Int(arc4random_uniform(UInt32(10000000)))).gif")
+        
         
         // create a destination needed for the process
         destination = CGImageDestinationCreateWithURL(fileURL as CFURLRef, kUTTypeGIF, gifArray.count, nil)!
@@ -331,8 +366,10 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             // if not scroll to the beginning
         else {
             collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.Top, animated:true)
-            //??
-            //recursiveGifCreator()
+            print("This was called")
+            print("Current Index ",currentIndex)
+            print("current frame ", currentFrame)
+           
         }
     }
     
@@ -412,13 +449,15 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             else {
                 // scroll to the next frame
                 collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: currentIndex, inSection: 0), atScrollPosition:UICollectionViewScrollPosition.Top, animated:true)
-                print("It must not be the last frame...here's your issue")
+                print("It must not be the last frame..")
             }
         }
     }
     
     // function to create a snapshot from the current frame
     func createImage(index:Int) -> UIImage {
+        
+        print("createImage called somewhere")
         // get the current frame
         let auxView = collectionView.cellForItemAtIndexPath(NSIndexPath(forRow: index, inSection: 0))
         
@@ -464,7 +503,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             // Get the new view controller using segue.destinationViewController.
             // Pass the selected object to the new view controller.
             let viewController = segue.destinationViewController as! ShareViewController
-            
+            //self.alert?.dismissWithClickedButtonIndex(<#T##buttonIndex: Int##Int#>, animated: <#T##Bool#>)
             // set the gif and the video
             viewController.gif = self.gifURL
             viewController.video = self.videoURL
