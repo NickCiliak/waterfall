@@ -120,7 +120,8 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             self.camera?.captureStillImage({ (image) -> Void in
                 if image != nil {
                     self.gifArray[self.currentFrame]["image"] = image;
-                    print("Image Saved")
+                    print("Image Saved & current frame")
+                    print(self.currentFrame)
                     self.nextFrameCard()
                     
                     
@@ -163,9 +164,10 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     
     func nextFrameCard() {
         //initializeCamera()
-        self.gifArray.append(["text": "", "font": "Bebas", "fontColor": UIColor.whiteColor(), "backgroundColor": UIColor(red: 93.0/255.0, green: 156.0/255.0, blue: 236.0/255.0, alpha: 1.0), "image": UIImage()])
+        self.gifArray.append(["text": "", "font": "Bebas", "fontColor": UIColor.whiteColor(), "backgroundColor": UIColor(red: 93.0/255.0, green: 156.0/255.0, blue: 236.0/255.0, alpha: 1.0), "image": UIImage(named: "frame")])
         //self.imageView.image = image;
-        self.collectionView.reloadData()
+        //self.collectionView.reloadData()
+        
         // scroll the index collection view to the selected frame
         self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: self.gifArray.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
         
