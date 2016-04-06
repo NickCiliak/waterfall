@@ -11,4 +11,5 @@ import UIKit
 class FrameCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var deleteButton: UIButton!
 }

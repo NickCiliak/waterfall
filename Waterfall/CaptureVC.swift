@@ -35,7 +35,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     var status: Status = .Preview
     
     // the gif array content
-    var gifArray:[Dictionary<String,Any>] = [["text": "", "font": "Bebas", "fontColor": UIColor.blackColor(), "backgroundColor": UIColor(red: 93.0/255.0, green: 156.0/255.0, blue: 236.0/255.0, alpha: 1.0), "image": UIImage()]]
+    var gifArray:[Dictionary<String,Any>] = [["image": UIImage(named: "frame")]]
     
     // an alert view (used to show the user a wait for message while creating the gif)
     var alert: UIAlertView?
@@ -120,9 +120,14 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             self.camera?.captureStillImage({ (image) -> Void in
                 if image != nil {
                     self.gifArray[self.currentFrame]["image"] = image;
-                    print("Image Saved & current frame")
-                    print(self.currentFrame)
+                    print("Current Frame: \(self.currentFrame)")
+                    print("Gif Array Count: \(self.gifArray.count)")
+                    self.collectionView.reloadData()
+                    // set the new current frame
+                    self.currentFrame = self.gifArray.count - 1
+                    print("New Current frame: \(self.currentFrame) ")
                     self.nextFrameCard()
+                    //self.collectionView.reloadData()
                     
                     
                     
@@ -150,7 +155,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                     self.status = .Preview
             })
         }
-        print(gifArray.count)
+        
         collectionView.reloadData()
         //mainTextField.becomeFirstResponder()
 
@@ -164,15 +169,15 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     
     func nextFrameCard() {
         //initializeCamera()
-        self.gifArray.append(["text": "", "font": "Bebas", "fontColor": UIColor.whiteColor(), "backgroundColor": UIColor(red: 93.0/255.0, green: 156.0/255.0, blue: 236.0/255.0, alpha: 1.0), "image": UIImage(named: "frame")])
+        self.gifArray.append(["image": UIImage(named: "frame")])
         //self.imageView.image = image;
         //self.collectionView.reloadData()
         
         // scroll the index collection view to the selected frame
-        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: self.gifArray.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+        self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: self.gifArray.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
         
         // set the new current frame
-        self.currentFrame = self.gifArray.count - 1
+        //self.currentFrame = self.gifArray.count - 1
     }
     
 //    // event called when a the keyboard is going to show
@@ -234,6 +239,9 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
             // set the background image
             (cell.contentView.viewWithTag(7) as! UIImageView).image = gifArray[indexPath.row]["image"] as? UIImage
         }
+        else {
+            (cell.contentView.viewWithTag(7) as! UIImageView).image = UIImage(named: "frame")
+        }
         
         return cell
     }
@@ -250,10 +258,10 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         // if the scroll view received is the frames collection view
         if scrollView == collectionView {
             // get the new current frame
-            currentFrame = Int(collectionView.contentOffset.x / collectionView.frame.size.width)
             
-            // reload data on the index collection view
-            //indexCollectionView.reloadData()
+            //currentFrame = Int(collectionView.contentOffset.y / collectionView.frame.size.height)
+            
+
             
             // set the new main textfield text
             //mainTextField.text = gifArray[currentFrame]["text"] as? String
