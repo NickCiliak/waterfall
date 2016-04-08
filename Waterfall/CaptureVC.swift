@@ -64,6 +64,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     // the file url for the gif used on the process of creating a gif
     var gifURL = NSURL()
     
+     var lastSelectedIndex: NSIndexPath?
 
     
     // set the status bar to light
@@ -124,7 +125,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                     print("Gif Array Count: \(self.gifArray.count)")
                     self.collectionView.reloadData()
                     // set the new current frame
-                    self.currentFrame = self.gifArray.count - 1
+                    self.currentFrame = self.gifArray.count 
                     print("New Current frame: \(self.currentFrame) ")
                     self.nextFrameCard()
                     //self.collectionView.reloadData()
@@ -177,7 +178,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         self.collectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: self.gifArray.count - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
         
         // set the new current frame
-        //self.currentFrame = self.gifArray.count - 1
+        self.currentFrame = self.gifArray.count - 1
     }
     
 //    // event called when a the keyboard is going to show
@@ -232,17 +233,19 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         //let cell:UICollectionViewCell!
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndexCell", forIndexPath: indexPath)
+       // let cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndexCell", forIndexPath: indexPath)
         
         // if image is not nil
-        if gifArray[indexPath.row]["image"] != nil {
+        //if gifArray[indexPath.row]["image"] != nil {
             // set the background image
-            (cell.contentView.viewWithTag(7) as! UIImageView).image = gifArray[indexPath.row]["image"] as? UIImage
-        }
-        else {
-            (cell.contentView.viewWithTag(7) as! UIImageView).image = UIImage(named: "frame")
-        }
+         //   (cell.contentView.viewWithTag(7) as! UIImageView).image = gifArray[indexPath.row]["image"] as? UIImage
+       // }
+       // else {
+         //   (cell.contentView.viewWithTag(7) as! UIImageView).image = UIImage(named: "bg")
+        //}
         
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndexCell", forIndexPath: indexPath) as! FrameCollectionViewCell
+        cell.imageView.image = gifArray[indexPath.row]["image"] as? UIImage
         return cell
     }
     
@@ -332,7 +335,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         loadingIndicator.startAnimating()
         
         // show the alert view
-        //alert.show();
+       //alert.show();
         
         // set the creating gif variable to true to indicate we are starting the process
         creatingGif = true
@@ -342,14 +345,13 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         }
         
         // set the current index to 0 as we are starting
-        currentIndex = 0
+       currentIndex = 0
         
 //        if currentIndex == 0 {
 //            print("Current Index set to 0")
 //        }
         
-        //??
-        //currentFrame = 0
+        
         
         // create the file properties (we make the gif to loop)
         let fileProperties = [kCGImagePropertyGIFDictionary as String: [kCGImagePropertyGIFLoopCount as String: 0]]
