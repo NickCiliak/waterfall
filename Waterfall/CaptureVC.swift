@@ -24,7 +24,9 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     @IBOutlet weak var cameraPreview: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBOutlet weak var mainTextField: UITextField!
+    @IBOutlet var keyboardInputAccessory: UIView!
+    @IBOutlet weak var keyboardTextField: UITextField!
+
     
     //Image Placeholder
     var stillImage:UIImage?
@@ -35,7 +37,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     var status: Status = .Preview
     
     // the gif array content
-    var gifArray:[Dictionary<String,Any>] = [["image": UIImage(named: "frame")]]
+    var gifArray:[Dictionary<String,Any>] = [["text": "", "image": UIImage(named: "frame")]]
     
     // an alert view (used to show the user a wait for message while creating the gif)
     var alert: UIAlertView?
@@ -75,14 +77,28 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
 
     override func viewDidLoad() {
         super.viewDidLoad()
-     self.initializeCamera()
+        
+        keyboardTextField.inputAccessoryView = keyboardInputAccessory
+        
+     //self.initializeCamera()
         collectionView.delegate = self
         collectionView.reloadData()
     
         
+        keyboardTextField.becomeFirstResponder()
+        keyboardTextField.delegate = self
+        
         // add an observer to catch later when the keyboard will show
+        // handle text view
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        
+       
     }
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -123,11 +139,15 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                     self.gifArray[self.currentFrame]["image"] = image;
                     print("Current Frame: \(self.currentFrame)")
                     print("Gif Array Count: \(self.gifArray.count)")
+                    //self.keyboardTextField.becomeFirstResponder()
                     self.collectionView.reloadData()
-                    // set the new current frame
-                    self.currentFrame = self.gifArray.count 
-                    print("New Current frame: \(self.currentFrame) ")
-                    self.nextFrameCard()
+                    
+                  
+                    
+//                    // set the new current frame
+//                    self.currentFrame = self.gifArray.count 
+//                    print("New Current frame: \(self.currentFrame) ")
+//                    self.nextFrameCard()
                     //self.collectionView.reloadData()
                     
                     
@@ -188,42 +208,42 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
     let keyboardFrame:CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 //        
 //        // set the new constant of the constraint and animate it
-//        //mainTextFieldBottomConstraint.constant = keyboardFrame.height
+       //mainTextFieldBottomConstraint.constant = keyboardFrame.height
  UIView.animateWithDuration(0.4) { () -> Void in
   self.view.layoutIfNeeded()
       }
  }
-//    
-//    // touches began on the main view, deal with the focuses of the textfields
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        let touchesSet = touches as NSSet
-//        let touch = touchesSet.anyObject() as? UITouch
-//        
-//        // if we were editing the main textfield and we lose the focus
-//        if mainTextField.isFirstResponder() && touch!.view != self.mainTextField //&& touch!.view != self.frameCollectionView  
-//        {
-//            // dismiss the keyboard
-//            mainTextField.resignFirstResponder();
-//            
-//            // set the new constraints
-//            //mainTextFieldBottomConstraint.constant = -50
-//            //UIView.animateWithDuration(0.2) { () -> Void in
-//                //self.view.layoutIfNeeded()
-//            }
-//       }
-//    
-//    // event called when the return button is tapped on the keyboard
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        
-//        // set the new constant of the constraint and animate it
-//        //mainTextFieldBottomConstraint.constant = -50
-//        UIView.animateWithDuration(0.2) { () -> Void in
-//            self.view.layoutIfNeeded()
-//        }
-//        
-//        return true
-//    }
+    
+    // touches began on the main view, deal with the focuses of the textfields
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touchesSet = touches as NSSet
+        let touch = touchesSet.anyObject() as? UITouch
+        
+        // if we were editing the main textfield and we lose the focus
+        if keyboardTextField.isFirstResponder() && touch!.view != self.keyboardTextField //&& touch!.view != self.frameCollectionView
+        {
+            // dismiss the keyboard
+            keyboardTextField.resignFirstResponder();
+            
+            // set the new constraints
+            //mainTextFieldBottomConstraint.constant = -50
+            //UIView.animateWithDuration(0.2) { () -> Void in
+                //self.view.layoutIfNeeded()
+            }
+       }
+    
+    // event called when the return button is tapped on the keyboard
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        // set the new constant of the constraint and animate it
+        //mainTextFieldBottomConstraint.constant = -50
+        UIView.animateWithDuration(0.2) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
+        
+        return true
+    }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -246,7 +266,20 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndexCell", forIndexPath: indexPath) as! FrameCollectionViewCell
         cell.imageView.image = gifArray[indexPath.row]["image"] as? UIImage
+        cell.mainTextLabel.text = gifArray[indexPath.row]["text"] as? String
         return cell
+    }
+    // collection view method -> cell selected at index path
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+       keyboardTextField.text = gifArray[currentFrame]["text"] as? String
+        // show the keyboard and the textfield
+        keyboardTextField.becomeFirstResponder()
+        
+        //let cell = collectionView.dequeueReusableCellWithReuseIdentifier("IndexCell", forIndexPath: indexPath) as! FrameCollectionViewCell
+        //cell.mainTextField.text = gifArray[currentFrame]["text"] as? String
+        // show the keyboard and the textfield
+        //cell.mainTextField.becomeFirstResponder()
     }
     
    

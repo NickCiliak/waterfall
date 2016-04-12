@@ -8,8 +8,9 @@
 
 import UIKit
 
-class FrameCollectionViewCell: UICollectionViewCell {
+class FrameCollectionViewCell: UICollectionViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var mainTextLabel: UILabel!
 }

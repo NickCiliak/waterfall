@@ -12,6 +12,7 @@
             <string>Karla-Regular</string>
             <string>Karla-Regular</string>
             <string>Karla-Regular</string>
+            <string>Karla-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -133,6 +134,12 @@ making Waterfalls.</string>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place something here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-dr-Mw3">
+                                                    <rect key="frame" x="8" y="150" width="280" height="106"/>
+                                                    <fontDescription key="fontDescription" name="Karla-Regular" family="Karla" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -147,6 +154,7 @@ making Waterfalls.</string>
                                         <connections>
                                             <outlet property="deleteButton" destination="jnd-Vu-0XY" id="VjR-X0-yoB"/>
                                             <outlet property="imageView" destination="8w1-wR-Ex4" id="khe-09-e0R"/>
+                                            <outlet property="mainTextLabel" destination="7ic-dr-Mw3" id="HI0-aO-Ro6"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -218,10 +226,35 @@ making Waterfalls.</string>
                         <outlet property="captureButton" destination="4Bt-OY-a9v" id="Iww-qd-4Te"/>
                         <outlet property="collectionView" destination="nN3-BK-bnj" id="n7R-DC-3T9"/>
                         <outlet property="confirmButton" destination="EMA-1r-KQE" id="xKf-6N-fPZ"/>
+                        <outlet property="keyboardInputAccessory" destination="R42-AZ-a6P" id="o3J-mW-Rcu"/>
+                        <outlet property="keyboardTextField" destination="yT0-y2-IYJ" id="BU1-7E-CfR"/>
                         <segue destination="1yc-8o-6PR" kind="modal" identifier="ShareSegue" id="FhV-bZ-5Eb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jl6-DR-wMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="R42-AZ-a6P" userLabel="TextView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yT0-y2-IYJ">
+                            <rect key="frame" x="8" y="10" width="304" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                    <color key="value" red="0.96828776597976685" green="0.97641628980636597" blue="0.98460859060287476" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.33226433396339417" green="0.36407226324081421" blue="0.40569338202476501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="yT0-y2-IYJ" firstAttribute="top" secondItem="R42-AZ-a6P" secondAttribute="top" constant="10" id="TLw-HJ-XXX"/>
+                        <constraint firstItem="yT0-y2-IYJ" firstAttribute="leading" secondItem="R42-AZ-a6P" secondAttribute="leading" constant="8" id="XZ2-fM-eTN"/>
+                        <constraint firstAttribute="trailing" secondItem="yT0-y2-IYJ" secondAttribute="trailing" constant="8" id="mGU-Uk-9uX"/>
+                        <constraint firstAttribute="bottom" secondItem="yT0-y2-IYJ" secondAttribute="bottom" constant="10" id="ySc-oV-ESm"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="852" y="272"/>
         </scene>
@@ -368,7 +401,7 @@ making Waterfalls.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lop-UJ-Mnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="908"/>
+            <point key="canvasLocation" x="857" y="1168"/>
         </scene>
         <!--Share View Controller-->
         <scene sceneID="pJM-FM-5kr">
