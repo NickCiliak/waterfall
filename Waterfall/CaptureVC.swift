@@ -80,7 +80,7 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
         
         keyboardTextField.inputAccessoryView = keyboardInputAccessory
         
-     //self.initializeCamera()
+        self.initializeCamera()
         collectionView.delegate = self
         collectionView.reloadData()
     
