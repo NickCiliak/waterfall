@@ -139,16 +139,16 @@ class CaptureVC: UIViewController, XMCCameraDelegate, UITextFieldDelegate, UICol
                     self.gifArray[self.currentFrame]["image"] = image;
                     print("Current Frame: \(self.currentFrame)")
                     print("Gif Array Count: \(self.gifArray.count)")
-                    //self.keyboardTextField.becomeFirstResponder()
+                    self.keyboardTextField.becomeFirstResponder()
                     self.collectionView.reloadData()
                     
                   
                     
 //                    // set the new current frame
-//                    self.currentFrame = self.gifArray.count 
+                   self.currentFrame = self.gifArray.count
 //                    print("New Current frame: \(self.currentFrame) ")
-//                    self.nextFrameCard()
-                    //self.collectionView.reloadData()
+                   self.nextFrameCard()
+                   self.collectionView.reloadData()
                     
                     
                     
